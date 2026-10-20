@@ -81,7 +81,7 @@ def write(folder, slides):
 # ---------- HISTORIAS (2 por día) ----------
 H = {
  "2026-10-20-historias": [
-   story("camion-scania-al-atardecer-entre-montanas", '<div class="kicker">Buenos Aires → San Juan</div><h1>Camiones <em>todos</em> los días.</h1><div class="sub">Tu mercadería no espera.</div>', "50% 40%"),
+   story("camion-scania-al-atardecer-entre-montanas", '<div class="kicker">Buenos Aires ↔ San Juan</div><h1>Camiones <em>todos</em> los días.</h1><div class="sub">Tu mercadería no espera.</div>', "50% 40%"),
    story("caja-de-carton-con-logo-de-transporte-lancarg", '<h1>¿Tenés que traer <em>algo</em>?</h1><div class="sub">Nosotros nos encargamos. Cotizá por WhatsApp.</div>' + WAPILL, "50% 45%"),
  ],
  "2026-10-21-historias": [
@@ -98,7 +98,7 @@ H = {
  ],
  "2026-10-24-historias": [
    story("muestrario-de-cajas-con-el-logo-transportes-lancarg", '<div class="kicker">Tip de envío</div><h2>Cómo embalar bien tu paquete</h2><div class="list"><div class="li"><span class="dot">1</span>Embalaje firme, sin huecos adentro</div><div class="li"><span class="dot">2</span>Cinta en forma de H</div><div class="li"><span class="dot">3</span>Datos de destino bien visibles</div></div>', "50% 50%"),
-   story("camiondecostadocerca", '<div class="kicker">Nuestro corredor</div><h1>Buenos Aires, Córdoba y Rosario → <em>San Juan y Mendoza</em>.</h1>', "50% 50%"),
+   story("camion-con-semi-de-frete-derecho", '<div class="kicker">Nuestro corredor</div><h1>Buenos Aires, Córdoba y Rosario ↔ <em>San Juan y Mendoza</em>.</h1>', "50% 50%"),
  ],
  "2026-10-25-historias": [
    story("camion-scania-lancarg-bajo-cielo-azul", '<h1>Feliz domingo.</h1><div class="sub">Mañana arrancamos otra semana de envíos.</div>', "50% 40%"),
