@@ -44,7 +44,7 @@ h2{font-family:"Inter Display",Inter;font-weight:900;font-size:76px;line-height:
 """
 
 WA = '<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>'
-BAR = '<div class="bar"><span><b>Camión</b> todos los días</span><span>·</span><span><b>Carga</b> asegurada</span><span>·</span><span><b>Entrega</b> en destino</span></div>'
+BAR = '<div class="bar"><span><b>Camiones</b> todos los días</span><span>·</span><span><b>Carga</b> asegurada</span><span>·</span><span><b>Entrega</b> en destino</span></div>'
 WAPILL = '<div class="pill">' + WA.format(s=48) + '264 454-3612</div>'
 
 
@@ -74,15 +74,15 @@ def write(folder, slides):
 # ---------- HISTORIAS (2 por día) ----------
 H = {
  "2026-10-20-historias": [
-   story("camion-scania-al-atardecer-entre-montanas", '<div class="kicker">Buenos Aires → San Juan</div><h1>Camión <em>todos</em> los días.</h1><div class="sub">Tu mercadería no espera.</div>', "50% 40%"),
-   story("caja-de-carton-con-logo-de-transporte-lancarg", '<h1>¿Tenés que traer una caja?</h1><div class="sub">Cotizá en minutos por WhatsApp.</div>' + WAPILL, "50% 45%"),
+   story("camion-scania-al-atardecer-entre-montanas", '<div class="kicker">Buenos Aires → San Juan</div><h1>Camiones <em>todos</em> los días.</h1><div class="sub">Tu mercadería no espera.</div>', "50% 40%"),
+   story("caja-de-carton-con-logo-de-transporte-lancarg", '<h1>¿Tenés que traer un paquete?</h1><div class="sub">Cotizá en minutos por WhatsApp.</div>' + WAPILL, "50% 45%"),
  ],
  "2026-10-21-historias": [
    story("deposito-bsas-con-cajas", '<div class="kicker">Comercios</div><h1>¿Comprás en <em>Flores</em> u <em>Once</em>?</h1><div class="sub">Lo dejás en nuestras receptorías y te lo traemos a San Juan.</div>'),
    story("hombre-entregando-caja-con-logo-de-lancarg-a-mujer", '<h1>Retiramos y <em>entregamos</em>.</h1><div class="sub">Retiro a domicilio y última milla cubierta.</div>', "40% 50%"),
  ],
  "2026-10-22-historias": [
-   story("muestrario-de-cajas-con-el-logo-transportes-lancarg", '<div class="mito">✕ Mito: "Solo llevan cargas grandes".</div><h1 style="margin-top:30px">Realidad: <em>una sola caja</em> también viaja.</h1>', "50% 50%"),
+   story("muestrario-de-cajas-con-el-logo-transportes-lancarg", '<div class="mito">✕ Mito: "Solo llevan cargas grandes".</div><h1 style="margin-top:30px">Realidad: <em>un solo paquete</em> también viaja.</h1>', "50% 50%"),
    story("camion-con-carga-paletizada-y-lona-verde", '<h1>Tu carga, <em>asegurada</em>.</h1><div class="sub">De punta a punta del viaje.</div>', "50% 50%"),
  ],
  "2026-10-23-historias": [
@@ -90,7 +90,7 @@ H = {
    story("planchada-deposito-san-juan", '<h2>Sucursal San Juan</h2><div class="card"><div class="t">Ruta 40 545 Norte, Chimbas</div><div class="d">Lunes a viernes de 8 a 16 h · Sábados de 8 a 12:30 h</div><div class="p">' + WA.format(s=40) + '264 454-3612</div></div>', "50% 50%"),
  ],
  "2026-10-24-historias": [
-   story("muestrario-de-cajas-con-el-logo-transportes-lancarg", '<div class="kicker">Tip de envío</div><h2>Cómo embalar bien tu caja</h2><div class="list"><div class="li"><span class="dot">1</span>Caja firme, sin huecos adentro</div><div class="li"><span class="dot">2</span>Cinta en forma de H</div><div class="li"><span class="dot">3</span>Datos de destino bien visibles</div></div>', "50% 50%"),
+   story("muestrario-de-cajas-con-el-logo-transportes-lancarg", '<div class="kicker">Tip de envío</div><h2>Cómo embalar bien tu paquete</h2><div class="list"><div class="li"><span class="dot">1</span>Embalaje firme, sin huecos adentro</div><div class="li"><span class="dot">2</span>Cinta en forma de H</div><div class="li"><span class="dot">3</span>Datos de destino bien visibles</div></div>', "50% 50%"),
    story("camiondecostadocerca", '<div class="kicker">Nuestro corredor</div><h1>Buenos Aires, Córdoba y Rosario → <em>San Juan y Mendoza</em>.</h1>', "50% 50%"),
  ],
  "2026-10-25-historias": [
@@ -113,11 +113,11 @@ def feed(img, body, pos="50% 50%", shade="", step=None, bar=True, logo=True, top
 
 FEED = {
  "2026-10-23-carrusel-viaje-de-tu-caja": [
-   feed("caja-de-carton-con-logo-de-transporte-lancarg", '<div class="kicker">Paso a paso</div><h1>El viaje de <em>tu caja</em>.</h1><div class="sub">De Buenos Aires a tu puerta en San Juan. Deslizá →</div>', "50% 45%"),
-   feed("deposito-bsas-con-cajas", '<div class="num">1</div><h2>Recepción</h2><div class="sub">La dejás en nuestras receptorías o te la retiramos.</div>', step="1/4"),
-   feed("empleados-descargando-un-camion", '<div class="num">2</div><h2>Carga</h2><div class="sub">La clasificamos y la cargamos con cuidado.</div>', step="2/4"),
-   feed("camion-scania-lancarg-en-el-playon-unerquicklich", '<div class="num">3</div><h2>Viaje</h2><div class="sub">Sale en camión propio. Hay camión todos los días.</div>', step="3/4"),
-   feed("hombre-entregando-caja-con-logo-de-lancarg-a-mujer", '<div class="num">4</div><h2>Entrega</h2><div class="sub">Llega a destino y te la entregamos.</div>' + WAPILL, "40% 40%", step="4/4"),
+   feed("caja-de-carton-con-logo-de-transporte-lancarg", '<div class="kicker">Paso a paso</div><h1>El viaje de <em>tu paquete</em>.</h1><div class="sub">De Buenos Aires a tu puerta en San Juan. Deslizá →</div>', "50% 45%"),
+   feed("deposito-bsas-con-cajas", '<div class="num">1</div><h2>Recepción</h2><div class="sub">Lo dejás en nuestras receptorías o te lo retiramos.</div>', step="1/4"),
+   feed("empleados-descargando-un-camion", '<div class="num">2</div><h2>Carga</h2><div class="sub">Lo clasificamos y lo cargamos con cuidado.</div>', step="2/4"),
+   feed("camion-scania-lancarg-en-el-playon-unerquicklich", '<div class="num">3</div><h2>Viaje</h2><div class="sub">Viaja en camiones propios. Salen camiones todos los días.</div>', step="3/4"),
+   feed("hombre-entregando-caja-con-logo-de-lancarg-a-mujer", '<div class="num">4</div><h2>Entrega</h2><div class="sub">Llega a destino y te lo entregamos.</div>' + WAPILL, "40% 40%", step="4/4"),
  ],
  "2026-10-25-desde-1957": [
    feed("camion-scania-al-atardecer-entre-montanas", '<div class="kicker">Desde 1957</div><h1>Casi 70 años <em>en la ruta</em>.</h1><div class="sub">Gracias a cada cliente que nos confía su carga.</div>', "50% 40%"),

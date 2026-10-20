@@ -10,6 +10,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 - Logo: sobre fondo verde o foto usar `marca/logo-lancarg-sobre-verde.png` (rojo original + letras verdes pasadas a blanco,
   aprobado por Fran), sin recuadro, con sombra suave y con la parte de arriba de la foto oscurecida para que se lea.
   Sobre fondo blanco o claro, usar el logo original a color. No inventar otras versiones del logo.
+- Vocabulario: decir "paquete/paquetes", no "caja"; "camiones" en plural (ej. "Camiones todos los días").
 - Reglas que no se rompen: nunca mencionar la cantidad de camiones, no inventar reseñas, no copiar a la competencia,
   no usar Higgsfield ni generadores pagos.
 
