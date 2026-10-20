@@ -41,6 +41,10 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 4. `git add`, commit y push a `main`.
 5. Programar en Metricool con `media` = `https://raw.githubusercontent.com/sanchez1francisco9-cpu/lancarg-redes/main/<ruta>`,
    providers facebook + instagram, zona horaria America/Buenos_Aires.
+   - Horarios: consultar `getBestTimeToPostByNetwork` (instagram y facebook) para la semana y usar el mejor horario libre.
+     Si el mejor horario de Instagram y el de Facebook no coinciden, programar por separado: un post solo para cada red,
+     cada uno en su mejor horario (pedido de Fran). Referencia oct-2026: las dos redes pican a las 10:00;
+     IG tiene otro pico a las 18:00 y FB a las 12:00; el fin de semana rinde la mitad.
    - Todo automático (historias, feed y reels): `autoPublish: true` y `instagramData.autoPublish: true`.
      Fran revisa antes en el calendario de Metricool y cambia o borra lo que no le guste.
    Las historias van sin texto.
