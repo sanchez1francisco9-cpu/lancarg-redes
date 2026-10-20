@@ -75,7 +75,7 @@ def write(folder, slides):
 H = {
  "2026-10-20-historias": [
    story("camion-scania-al-atardecer-entre-montanas", '<div class="kicker">Buenos Aires → San Juan</div><h1>Camiones <em>todos</em> los días.</h1><div class="sub">Tu mercadería no espera.</div>', "50% 40%"),
-   story("caja-de-carton-con-logo-de-transporte-lancarg", '<h1>¿Tenés que traer un paquete?</h1><div class="sub">Cotizá en minutos por WhatsApp.</div>' + WAPILL, "50% 45%"),
+   story("caja-de-carton-con-logo-de-transporte-lancarg", '<h1>¿Tenés que traer <em>algo</em>?</h1><div class="sub">Nosotros nos encargamos. Cotizá por WhatsApp.</div>' + WAPILL, "50% 45%"),
  ],
  "2026-10-21-historias": [
    story("deposito-bsas-con-cajas", '<div class="kicker">Comercios</div><h1>¿Comprás en <em>Flores</em> u <em>Once</em>?</h1><div class="sub">Lo dejás en nuestras receptorías y te lo traemos a San Juan.</div>'),
