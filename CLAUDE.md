@@ -7,13 +7,16 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 
 - Leer la Guía de contenido (doc de Claude): https://claude.ai/code/artifact/da1707bc-728b-4f0f-b727-094289d8617d
   Ahí están el foco (paquetería chica), los valores, el tono, las reglas, los teléfonos y las ideas de formatos.
-- Reglas que no se rompen: logo SIEMPRE original (nunca recoloreado ni en blanco; sobre verde va en un recuadro blanco),
-  nunca mencionar la cantidad de camiones, no inventar reseñas, no copiar a la competencia, no usar Higgsfield ni generadores pagos.
+- Logo: sobre fondo verde o foto usar `marca/logo-lancarg-sobre-verde.png` (rojo original + letras verdes pasadas a blanco,
+  aprobado por Fran), sin recuadro, con sombra suave y con la parte de arriba de la foto oscurecida para que se lea.
+  Sobre fondo blanco o claro, usar el logo original a color. No inventar otras versiones del logo.
+- Reglas que no se rompen: nunca mencionar la cantidad de camiones, no inventar reseñas, no copiar a la competencia,
+  no usar Higgsfield ni generadores pagos.
 
 ## Carpetas
 
 - `fotos/` — fotos reales de la empresa (camiones, depósitos, cajas). Base de todos los diseños.
-- `marca/` — logos originales. `logo-lancarg-color-transparente.png` es el que va en los diseños.
+- `marca/` — logos. `logo-lancarg-sobre-verde.png` para fondos verdes o fotos; `logo-lancarg-color-transparente.png` para fondos claros.
 - `pedidos/` — imágenes que Fran crea a pedido (también puede subirlas a Drive, carpeta "fotos lancarg").
 - `plantillas/` — `ejemplo-carrusel.html` (estilo de referencia) y `render.py`.
 - `publicaciones/AAAA-MM-DD-tema/` — una carpeta por pieza: `diseno.html` + los JPG renderizados.

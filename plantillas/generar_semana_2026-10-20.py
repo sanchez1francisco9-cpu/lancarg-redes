@@ -3,7 +3,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 F = "../../fotos/"
-LOGO = "../../marca/logo-lancarg-color-transparente.png"
+LOGO = "../../marca/logo-lancarg-sobre-verde.png"
 
 CSS = """
 :root{--g:#02462D;--g2:#013322;--r:#E70A0F;--w:#fff;--soft:#9fdcbb}
@@ -12,9 +12,9 @@ body{background:#777;font-family:Inter,sans-serif}
 .slide{width:1080px;position:relative;overflow:hidden;color:var(--w);margin-bottom:20px;background:var(--g2)}
 .feed{height:1350px}.story{height:1920px}
 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,40,26,.55) 0%,rgba(1,40,26,0) 20%,rgba(1,40,26,0) 40%,rgba(1,51,34,.93) 68%,var(--g2) 100%)}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,40,26,.92) 0%,rgba(1,40,26,.6) 13%,rgba(1,40,26,0) 27%,rgba(1,40,26,0) 40%,rgba(1,51,34,.93) 68%,var(--g2) 100%)}
 .shade.top{background:linear-gradient(180deg,rgba(1,51,34,.95) 0%,rgba(1,51,34,.85) 30%,rgba(1,51,34,0) 55%)}
-.logo{position:absolute;top:56px;left:56px;width:330px;background:#fff;border-radius:22px;padding:14px 22px;box-shadow:0 6px 24px rgba(0,0,0,.25);z-index:5}
+.logo{position:absolute;top:60px;left:60px;width:400px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.55));z-index:5}
 .story .logo{top:120px;left:64px}
 .logo.br{top:auto;left:auto;right:56px;bottom:56px;width:280px}
 .txt{position:absolute;left:72px;right:72px;bottom:110px;z-index:4}
@@ -78,7 +78,7 @@ H = {
    story("caja-de-carton-con-logo-de-transporte-lancarg", '<h1>¿Tenés que traer una caja?</h1><div class="sub">Cotizá en minutos por WhatsApp.</div>' + WAPILL, "50% 45%"),
  ],
  "2026-10-21-historias": [
-   story("deposito-bsas-con-paquetes", '<div class="kicker">Comercios</div><h1>¿Comprás en <em>Flores</em> u <em>Once</em>?</h1><div class="sub">Lo dejás en nuestras receptorías y te lo traemos a San Juan.</div>'),
+   story("deposito-bsas-con-cajas", '<div class="kicker">Comercios</div><h1>¿Comprás en <em>Flores</em> u <em>Once</em>?</h1><div class="sub">Lo dejás en nuestras receptorías y te lo traemos a San Juan.</div>'),
    story("hombre-entregando-caja-con-logo-de-lancarg-a-mujer", '<h1>Retiramos y <em>entregamos</em>.</h1><div class="sub">Retiro a domicilio y última milla cubierta.</div>', "40% 50%"),
  ],
  "2026-10-22-historias": [
@@ -114,7 +114,7 @@ def feed(img, body, pos="50% 50%", shade="", step=None, bar=True, logo=True, top
 FEED = {
  "2026-10-23-carrusel-viaje-de-tu-caja": [
    feed("caja-de-carton-con-logo-de-transporte-lancarg", '<div class="kicker">Paso a paso</div><h1>El viaje de <em>tu caja</em>.</h1><div class="sub">De Buenos Aires a tu puerta en San Juan. Deslizá →</div>', "50% 45%"),
-   feed("deposito-bsas-con-paquetes", '<div class="num">1</div><h2>Recepción</h2><div class="sub">La dejás en nuestras receptorías o te la retiramos.</div>', step="1/4"),
+   feed("deposito-bsas-con-cajas", '<div class="num">1</div><h2>Recepción</h2><div class="sub">La dejás en nuestras receptorías o te la retiramos.</div>', step="1/4"),
    feed("empleados-descargando-un-camion", '<div class="num">2</div><h2>Carga</h2><div class="sub">La clasificamos y la cargamos con cuidado.</div>', step="2/4"),
    feed("camion-scania-lancarg-en-el-playon-unerquicklich", '<div class="num">3</div><h2>Viaje</h2><div class="sub">Sale en camión propio. Hay camión todos los días.</div>', step="3/4"),
    feed("hombre-entregando-caja-con-logo-de-lancarg-a-mujer", '<div class="num">4</div><h2>Entrega</h2><div class="sub">Llega a destino y te la entregamos.</div>' + WAPILL, "40% 40%", step="4/4"),
