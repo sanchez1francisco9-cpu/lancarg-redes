@@ -20,6 +20,8 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 ## Carpetas
 
 - `fotos/` — fotos reales de la empresa (camiones, depósitos, cajas). Base de todos los diseños.
+  - `fotos/vertical/` — versiones 9:16: usarlas primero en historias (llenan la pantalla, sin franjas).
+  - `fotos/recortes/` — paquetes en PNG sin fondo para componer flyers libremente.
 - `marca/` — logos. `logo-lancarg-sobre-verde.png` para fondos verdes o fotos; `logo-lancarg-color-transparente.png` para fondos claros.
 - `pedidos/` — imágenes que Fran crea a pedido (también puede subirlas a Drive, carpeta "fotos lancarg").
 - `plantillas/` — `ejemplo-carrusel.html` (estilo de referencia) y `render.py`.
