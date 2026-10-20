@@ -54,8 +54,30 @@ def is_landscape(name):
     return w > h
 
 
+VERT = {
+    "caja-de-carton-con-logo-de-transporte-lancarg": "caja-de-envio-lancarg-en-estudio-verde",
+    "hombre-entregando-caja-con-logo-de-lancarg-a-mujer": "entrega-de-caja-en-la-puerta-del-hogar",
+    "tres-camiones-lancarg-en-el-patio-logistico": "3-camiones-lancarg-bajo-cielo-azul",
+    "scania-blanca-cruzando-el-desierto-al-atardecer": "scania-cruzando-el-desierto",
+    "interior-deposito-bsas-con-mucha-mercaderia-variada": "interior-deposito-bsas-con-mucha-mercaderia",
+    "interior-deposito-bsas-con-cajas-a-la-izquierda-y-pallets-a-la-derecha": "interior-deposito-bsas-con-cajas-a-la-izquierda-y-pallets-a-la-derecha",
+    "deposito-buenos-aires-ordenado": "deposito-buenos-aires-ordenado",
+    "camion-en-deposito-bsas": "camion-en-deposito-bsas",
+    "camion-visto-de-atras-a-adelante": "camion-visto-de-atras-a-adelante",
+    "camion-lancarg-en-muelle-logistico": "camion-scania-lancarg-en-muelle-logistico",
+    "autoelevador-descargando-camion-con-empleados": "autoelevador-descargando-camion-con-empleados",
+    "camion-de-frente-izquierdo": "camion-frente-izquierdo",
+}
+
+
 def photo(name, pos="50% 50%", story=False):
-    contain = name.startswith(("caja-de-carton", "muestrario", "hombre-entregando")) or (story and is_landscape(name))
+    if name.startswith("recorte:"):
+        # paquete sin fondo sobre verde, en la mitad superior
+        return (f'<div style="position:absolute;inset:0;background:radial-gradient(90% 55% at 50% 32%,#0e6a45 0%,#02462D 55%,#013322 100%)"></div>'
+                f'<img src="{F}recortes/{name[8:]}.png" style="position:absolute;left:50%;top:{"13" if story else "14"}%;width:{"72" if story else "70"}%;transform:translateX(-50%);filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))">')
+    if name in VERT:
+        return f'<img class="bg" src="{F}vertical/{VERT[name]}.jpg" style="object-position:50% 50%">'
+    contain = name.startswith(("muestrario",)) or (story and is_landscape(name))
     fit = ";object-fit:contain;object-position:50% 30%" if contain else ""
     return f'<img class="bg" src="{F}{name}.jpg" style="object-position:{pos}{fit}">'
 
@@ -82,14 +104,14 @@ def write(folder, slides):
 H = {
  "2026-10-20-historias": [
    story("camion-scania-al-atardecer-entre-montanas", '<div class="kicker">Buenos Aires ↔ San Juan</div><h1>Camiones <em>todos</em> los días.</h1><div class="sub">Tu mercadería no espera.</div>', "50% 40%"),
-   story("caja-de-carton-con-logo-de-transporte-lancarg", '<h1>¿Tenés que traer <em>algo</em>?</h1><div class="sub">Nosotros nos encargamos. Cotizá por WhatsApp.</div>' + WAPILL, "50% 45%"),
+   story("recorte:caja-png-con-fondo-transparente-con-logo-lancarg", '<h1>¿Tenés que traer <em>algo</em>?</h1><div class="sub">Nosotros nos encargamos. Cotizá por WhatsApp.</div>' + WAPILL, "50% 45%"),
  ],
  "2026-10-21-historias": [
    story("deposito-bsas-con-cajas", '<div class="kicker">Comercios</div><h1>¿Comprás en <em>Flores</em> u <em>Once</em>?</h1><div class="sub">Lo dejás en nuestras receptorías y te lo traemos a San Juan.</div>'),
    story("hombre-entregando-caja-con-logo-de-lancarg-a-mujer", '<h1>Retiramos y <em>entregamos</em>.</h1><div class="sub">Retiro a domicilio y última milla cubierta.</div>', "40% 50%"),
  ],
  "2026-10-22-historias": [
-   story("caja-de-carton-con-logo-de-transporte-lancarg", '<div class="mito">✕ Mito: "Solo llevan cargas grandes".</div><h1 style="margin-top:30px">Realidad: <em>un solo paquete</em> también viaja.</h1>', "50% 50%"),
+   story("recorte:caja-png-con-fondo-transparente-con-logo-lancarg", '<div class="mito">✕ Mito: "Solo llevan cargas grandes".</div><h1 style="margin-top:30px">Realidad: <em>un solo paquete</em> también viaja.</h1>', "50% 50%"),
    story("camion-con-carga-paletizada-y-lona-verde", '<h1>Tu carga, <em>asegurada</em>.</h1><div class="sub">De punta a punta del viaje.</div>', "50% 50%"),
  ],
  "2026-10-23-historias": [
@@ -97,8 +119,8 @@ H = {
    story("planchada-deposito-san-juan", '<h2>Sucursal San Juan</h2><div class="card"><div class="t">Ruta 40 545 Norte, Chimbas</div><div class="d">Lunes a viernes de 8 a 16 h · Sábados de 8 a 12:30 h</div><div class="p">' + WA.format(s=40) + '264 454-3612</div></div>', "50% 50%"),
  ],
  "2026-10-24-historias": [
-   story("muestrario-de-cajas-con-el-logo-transportes-lancarg", '<div class="kicker">Tip de envío</div><h2>Cómo embalar bien tu paquete</h2><div class="list"><div class="li"><span class="dot">1</span>Embalaje firme, sin huecos adentro</div><div class="li"><span class="dot">2</span>Cinta en forma de H</div><div class="li"><span class="dot">3</span>Datos de destino bien visibles</div></div>', "50% 50%"),
-   story("camion-con-semi-de-frete-derecho", '<div class="kicker">Nuestro corredor</div><h1>Buenos Aires, Córdoba y Rosario ↔ <em>San Juan y Mendoza</em>.</h1>', "50% 50%"),
+   story("recorte:caja-abierta-png-con-logo-lancarg-fondo-transparente", '<div class="kicker">Tip de envío</div><h2>Cómo embalar bien tu paquete</h2><div class="list"><div class="li"><span class="dot">1</span>Embalaje firme, sin huecos adentro</div><div class="li"><span class="dot">2</span>Cinta en forma de H</div><div class="li"><span class="dot">3</span>Datos de destino bien visibles</div></div>', "50% 50%"),
+   story("camion-de-frente-izquierdo", '<div class="kicker">Nuestro corredor</div><h1>Buenos Aires, Córdoba y Rosario ↔ <em>San Juan y Mendoza</em>.</h1>', "50% 50%"),
  ],
  "2026-10-25-historias": [
    story("camion-scania-lancarg-bajo-cielo-azul", '<h1>Feliz domingo.</h1><div class="sub">Mañana arrancamos otra semana de envíos.</div>', "50% 40%"),
@@ -106,7 +128,7 @@ H = {
  ],
  "2026-10-26-historias": [
    story("frente-deposito-bsas-en-el-ctc-de-villa-soldati", '<h2>5 sucursales</h2><div class="sub" style="font-size:52px;font-weight:800;color:#fff">San Juan · Mendoza · Buenos Aires · Córdoba · Rosario</div>', "50% 50%"),
-   story("caja-de-carton-con-logo-de-transporte-lancarg", '<h1>Empezá la semana con tu envío resuelto.</h1>' + WAPILL, "50% 45%"),
+   story("recorte:cajas-de-transporte-apiladas-con-logo-fondo-transparente", '<h1>Empezá la semana con tu envío resuelto.</h1>' + WAPILL, "50% 45%"),
  ],
 }
 
@@ -120,7 +142,7 @@ def feed(img, body, pos="50% 50%", shade="", step=None, bar=True, logo=True, top
 
 FEED = {
  "2026-10-23-carrusel-viaje-de-tu-caja": [
-   feed("caja-de-carton-con-logo-de-transporte-lancarg", '<div class="kicker">Paso a paso</div><h1>El viaje de <em>tu paquete</em>.</h1><div class="sub">De Buenos Aires a tu puerta en San Juan. Deslizá →</div>', "50% 45%"),
+   feed("recorte:caja-png-con-fondo-transparente-con-logo-lancarg", '<div class="kicker">Paso a paso</div><h1>El viaje de <em>tu paquete</em>.</h1><div class="sub">De Buenos Aires a tu puerta en San Juan. Deslizá →</div>', "50% 45%"),
    feed("deposito-bsas-con-cajas", '<div class="num">1</div><h2>Recepción</h2><div class="sub">Lo dejás en nuestras receptorías o te lo retiramos.</div>', step="1/4"),
    feed("empleados-descargando-un-camion", '<div class="num">2</div><h2>Carga</h2><div class="sub">Lo clasificamos y lo cargamos con cuidado.</div>', step="2/4"),
    feed("camion-scania-lancarg-en-el-playon-unerquicklich", '<div class="num">3</div><h2>Viaje</h2><div class="sub">Viaja en camiones propios. Salen camiones todos los días.</div>', step="3/4"),
