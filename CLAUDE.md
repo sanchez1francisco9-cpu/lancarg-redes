@@ -26,6 +26,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
    renderizar con `python3 -I plantillas/render.py publicaciones/<carpeta>/diseno.html lancarg` y mirar cada JPG antes de subirlo.
 4. `git add`, commit y push a `main`.
 5. Programar en Metricool con `media` = `https://raw.githubusercontent.com/sanchez1francisco9-cpu/lancarg-redes/main/<ruta>`,
-   providers facebook + instagram, zona horaria America/Buenos_Aires. Las historias van sin texto.
+   providers facebook + instagram, zona horaria America/Buenos_Aires, `autoPublish: false` (y `instagramData.autoPublish: false`):
+   a la hora programada le llega a Fran un aviso en la app de Metricool y él aprueba y publica. Las historias van sin texto.
 6. Si una idea necesita una imagen que no existe, programarla con una foto alternativa y pedírsela a Fran en el resumen.
 7. Mandar a Fran un resumen corto: qué quedó programado y cuándo, y las imágenes que hacen falta.
