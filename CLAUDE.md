@@ -29,7 +29,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 
 ## Flujo semanal (lunes)
 
-1. Revisar en Metricool (marca "Expreso Lancarg": página de Facebook "Transporte Lancarg" + Instagram @lancargsanjuan) qué hay programado y qué rindió.
+1. Revisar en Metricool (marca "Transporte Lancarg": página de Facebook "Transporte Lancarg" + Instagram @lancargsanjuan) qué hay programado y qué rindió.
 2. Armar la semana: 4 publicaciones de feed (lunes, miércoles, viernes, domingo) y hasta 4 historias por día
    (sin contar publicaciones y reels compartidos en historias).
 2b. Historias fijas, 3 veces por semana (martes, jueves y sábado), a las 12:00, 12:01 y 12:02 (esos días hay 1 historia más, total 4):
