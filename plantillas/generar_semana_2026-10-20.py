@@ -135,7 +135,7 @@ SUC = [
   ("San Juan", "Ruta 40 545 Norte, Chimbas", "264 454-3612"),
   ("Mendoza", "Mitre 2671, Guaymallén", "261 240-6204"),
   ("Buenos Aires", "Pergamino 3751, C.T.C. Villa Soldati", "11 3779-5919"),
-  ("Córdoba", "La Cordillera 3774", None),
+  ("Córdoba", "La Cordillera 3774", "351 311-2698"),
   ("Rosario", "Río de Janeiro 2510", "341 364-0498"),
 ]
 cards = "".join(
