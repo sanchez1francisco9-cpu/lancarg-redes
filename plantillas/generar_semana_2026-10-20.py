@@ -49,7 +49,7 @@ WAPILL = '<div class="pill">' + WA.format(s=48) + '264 454-3612</div>'
 
 
 def photo(name, pos="50% 50%"):
-    fit = ";object-fit:contain;object-position:50% 30%" if name.startswith(("caja-de-carton", "muestrario")) else ""
+    fit = ";object-fit:contain;object-position:50% 30%" if name.startswith(("caja-de-carton", "muestrario", "hombre-entregando")) else ""
     return f'<img class="bg" src="{F}{name}.jpg" style="object-position:{pos}{fit}">'
 
 
