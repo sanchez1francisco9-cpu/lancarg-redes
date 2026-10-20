@@ -49,7 +49,7 @@ WAPILL = '<div class="pill">' + WA.format(s=48) + '264 454-3612</div>'
 
 
 def photo(name, pos="50% 50%"):
-    fit = ";object-fit:contain;object-position:50% 14%" if name.startswith(("caja-de-carton", "muestrario")) else ""
+    fit = ";object-fit:contain;object-position:50% 30%" if name.startswith(("caja-de-carton", "muestrario")) else ""
     return f'<img class="bg" src="{F}{name}.jpg" style="object-position:{pos}{fit}">'
 
 
@@ -82,7 +82,7 @@ H = {
    story("hombre-entregando-caja-con-logo-de-lancarg-a-mujer", '<h1>Retiramos y <em>entregamos</em>.</h1><div class="sub">Retiro a domicilio y última milla cubierta.</div>', "40% 50%"),
  ],
  "2026-10-22-historias": [
-   story("muestrario-de-cajas-con-el-logo-transportes-lancarg", '<div class="mito">✕ Mito: "Solo llevan cargas grandes".</div><h1 style="margin-top:30px">Realidad: <em>un solo paquete</em> también viaja.</h1>', "50% 50%"),
+   story("caja-de-carton-con-logo-de-transporte-lancarg", '<div class="mito">✕ Mito: "Solo llevan cargas grandes".</div><h1 style="margin-top:30px">Realidad: <em>un solo paquete</em> también viaja.</h1>', "50% 50%"),
    story("camion-con-carga-paletizada-y-lona-verde", '<h1>Tu carga, <em>asegurada</em>.</h1><div class="sub">De punta a punta del viaje.</div>', "50% 50%"),
  ],
  "2026-10-23-historias": [
