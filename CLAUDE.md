@@ -29,6 +29,10 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 
 1. Revisar en Metricool (marca "Expreso Lancarg", Facebook + Instagram @lancargsan) qué hay programado y qué rindió.
 2. Armar la semana: 4 publicaciones de feed (lunes, miércoles, viernes, domingo) y 14 historias (2 por día).
+2b. Historias fijas, 3 veces por semana (martes, jueves y sábado), además de las 2 diarias, a las 12:00, 12:01 y 12:02:
+   sucursales `publicaciones/2026-10-20-destacadas/lancarg-1.jpg`, horarios `.../lancarg-2.jpg` y atención al cliente
+   `publicaciones/2026-10-22-atencion-cliente/lancarg-1.jpg`. Se reutilizan esas mismas imágenes (no rediseñar salvo cambio de datos).
+   El sticker de link a WhatsApp no se puede poner por API: va sin sticker.
 3. Por cada pieza: `publicaciones/<fecha>-<tema>/diseno.html` con `.slide` de 1080x1350 (feed) o 1080x1920 (historia),
    renderizar con `python3 -I plantillas/render.py publicaciones/<carpeta>/diseno.html lancarg` y mirar cada JPG antes de subirlo.
 4. `git add`, commit y push a `main`.
