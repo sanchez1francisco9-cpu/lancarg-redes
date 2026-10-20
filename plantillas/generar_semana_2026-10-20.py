@@ -48,8 +48,15 @@ BAR = '<div class="bar"><span><b>Camiones</b> todos los días</span><span>·</sp
 WAPILL = '<div class="pill">' + WA.format(s=48) + '264 454-3612</div>'
 
 
-def photo(name, pos="50% 50%"):
-    fit = ";object-fit:contain;object-position:50% 30%" if name.startswith(("caja-de-carton", "muestrario", "hombre-entregando")) else ""
+def is_landscape(name):
+    from PIL import Image
+    w, h = Image.open(os.path.join(ROOT, "fotos", name + ".jpg")).size
+    return w > h
+
+
+def photo(name, pos="50% 50%", story=False):
+    contain = name.startswith(("caja-de-carton", "muestrario", "hombre-entregando")) or (story and is_landscape(name))
+    fit = ";object-fit:contain;object-position:50% 30%" if contain else ""
     return f'<img class="bg" src="{F}{name}.jpg" style="object-position:{pos}{fit}">'
 
 
@@ -58,7 +65,7 @@ def page(slides):
 
 
 def story(img, body, pos="50% 50%", shade="", logo=True, top=False):
-    return (f'<div class="slide story">{photo(img,pos)}<div class="shade {shade}"></div>'
+    return (f'<div class="slide story">{photo(img,pos,story=True)}<div class="shade {shade}"></div>'
             + (f'<img class="logo" src="{LOGO}">' if logo else '')
             + f'<div class="txt {"top" if top else ""}">{body}</div></div>')
 
