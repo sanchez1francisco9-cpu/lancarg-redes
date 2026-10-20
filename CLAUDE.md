@@ -13,6 +13,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 - Fotos: nunca recortar personas ni camiones. En historias (9:16) las fotos horizontales van completas
   (object-fit: contain, centradas un poco arriba) sobre el fondo verde; ver `photo()` en plantillas/generar_semana_*.py.
 - Vocabulario: decir "paquete/paquetes", no "caja"; "camiones" en plural (ej. "Camiones todos los días").
+  Rutas siempre con flecha doble ↔ (viajamos en los dos sentidos), nunca →.
 - Reglas que no se rompen: nunca mencionar la cantidad de camiones, no inventar reseñas, no copiar a la competencia,
   no usar Higgsfield ni generadores pagos.
 
