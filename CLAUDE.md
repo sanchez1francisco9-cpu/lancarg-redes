@@ -34,8 +34,8 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 4. `git add`, commit y push a `main`.
 5. Programar en Metricool con `media` = `https://raw.githubusercontent.com/sanchez1francisco9-cpu/lancarg-redes/main/<ruta>`,
    providers facebook + instagram, zona horaria America/Buenos_Aires.
-   - Historias: `autoPublish: true` (y `instagramData.autoPublish: true`): salen solas; Fran las revisa antes en el calendario.
-   - Feed y reels: `autoPublish: false` (y `instagramData.autoPublish: false`): a la hora le llega a Fran un aviso y él publica.
+   - Todo automático (historias, feed y reels): `autoPublish: true` y `instagramData.autoPublish: true`.
+     Fran revisa antes en el calendario de Metricool y cambia o borra lo que no le guste.
    Las historias van sin texto.
 5b. Videos de Fran (reels): se toman directo de su Drive pasando el link de Drive en `media`; el archivo tiene que estar
    compartido como "Cualquier persona con el enlace". No editar el video salvo que Fran lo pida.
