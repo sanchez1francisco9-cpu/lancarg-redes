@@ -1,5 +1,10 @@
 <!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../plantillas/motion.css">
+<style>
+.logowrap{position:relative;width:760px;height:222px;margin-top:820px}
+.logowrap img{position:absolute;left:0;top:0;width:100%;filter:drop-shadow(0 4px 14px rgba(0,0,0,.5))}
+#lgTruck{clip-path:inset(0 0 0 76%)}
+</style>
 </head><body>
 <div id="stage">
   <div class="scene" id="s1" data-start="0" data-end="3.4">
@@ -23,9 +28,8 @@
     </div>
   </div>
   <div class="scene green end" id="s4" data-start="10.2" data-end="14" data-nologo>
-    <img class="biglogo" data-in="0.15" src="../../marca/logo-lancarg-sobre-verde.png">
-    <h2 data-in="0.5">En la ruta<br>desde 1957</h2>
-    <div class="pill" data-in="0.9"><span style="font-size:60px">📲</span><span>Cotizá por WhatsApp<small>264 454-3612</small></span></div>
+    <div class="logowrap"><img id="lgText" src="../../marca/logo-lancarg-sobre-verde.png"><img id="lgTruck" src="../../marca/logo-lancarg-sobre-verde.png"></div>
+    <div class="pill" data-in="1.7"><span style="font-size:60px">📲</span><span>Cotizá por WhatsApp<small>264 454-3612</small></span></div>
   </div>
   <img id="toplogo" src="../../marca/logo-lancarg-sobre-verde.png">
 </div>
@@ -33,7 +37,19 @@
 // paquetes de la escena 2: entran volando y quedan flotando
 // [id, demora, x inicial, x final, y, giro inicial, giro final]
 const P = [["p1",0.0,-560,90,300,-18,-8],["p2",0.2,1140,580,280,24,10],["p3",0.4,-500,340,580,-30,3]];
+// cierre: el camión del logo entra andando desde la izquierda y va "trayendo" el resto del logo detrás
+const LOGO_W = 1540, TRUCK_X = 1170, SCALE = 760 / LOGO_W;
+function logoDrive(t) {
+  const lt = sceneTime(t, 's4'), x = cl((lt - 0.1) / 1.6), p = 1 - Math.pow(1 - x, 4), dx = -1500 * (1 - p);
+  const moving = 1 - x;
+  const truck = document.getElementById('lgTruck'), text = document.getElementById('lgText');
+  truck.style.transform = `translateX(${dx}px) translateY(${Math.sin(lt * 38) * 4 * moving}px) rotate(${-1.2 * moving + 1.2 * Math.sin(cl((lt - 1.5) / 0.5) * Math.PI) * 0.8}deg)`;  // al frenar, la trompa baja un poco
+  const edge = Math.min(LOGO_W, TRUCK_X + dx / SCALE);              // hasta dónde llegó la trompa del camión
+  text.style.clipPath = `inset(0 ${Math.max(0, 100 - edge / LOGO_W * 100)}% 0 0)`;
+  text.style.transform = `translateX(${Math.min(0, dx) * 0.04}px)`;
+}
 window.extra = function (t) {
+  logoDrive(t);
   const lt = sceneTime(t, 's2');
   P.forEach(([id, dl, x0, x1, y, r0, r1], i) => {
     const p = eo((lt - dl) / 0.8), el = document.getElementById(id);
