@@ -48,6 +48,11 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
    - Todo automático (historias, feed y reels): `autoPublish: true` y `instagramData.autoPublish: true`.
      Fran revisa antes en el calendario de Metricool y cambia o borra lo que no le guste.
    Las historias van sin texto.
+3b. Reels animados (pedido de Fran, oct-2026): en el feed preferir reels animados para piezas con pasos o emotivas
+   (ej. "El viaje de tu paquete", "Desde 1957"); los carruseles de consulta (sucursales) quedan como carrusel.
+   `diseno.html` con `.scene` + `plantillas/motion.css` y `plantillas/motion.js` (ver ejemplos en `publicaciones/*-reel-*`),
+   revisar con `python3 -I plantillas/render_video.py <html> --preview 2,5,9` y exportar sin `--preview` (genera `lancarg.mp4`).
+   Programar con facebookData/instagramData type REEL. Sin música (Fran la agrega si quiere).
 5b. Videos de Fran (reels): se toman directo de su Drive pasando el link de Drive en `media`; el archivo tiene que estar
    compartido como "Cualquier persona con el enlace". No editar el video salvo que Fran lo pida.
 6. Si una idea necesita una imagen que no existe, programarla con una foto alternativa y pedírsela a Fran en el resumen.
