@@ -15,7 +15,7 @@
   <div class="scene green" id="s2" data-start="3.4" data-end="6.8">
     <img class="pkg" id="p1" src="../../fotos/recortes/caja-png-con-fondo-transparente-con-logo-lancarg.png" style="width:470px">
     <img class="pkg" id="p2" src="../../fotos/recortes/caja-abierta-png-con-logo-lancarg-fondo-transparente.png" style="width:400px">
-    <img class="pkg" id="p3" src="../../fotos/recortes/cajas-de-transporte-apiladas-con-logo-fondo-transparente.png" style="width:430px">
+    <img class="pkg" id="p3" src="../../fotos/recortes/pallet-con-paquetes-lancarg-fondo-transparente.png" style="width:370px">
     <div class="txt" style="top:1060px"><h1 data-in="0.35" style="font-size:104px">Comprá en Buenos Aires, <em>recibilo en <span style="white-space:nowrap">San Juan</span></em></h1>
       <div class="route" data-in="0.8">Buenos Aires <span class="arr">↔</span> San Juan</div></div>
   </div>
@@ -36,7 +36,7 @@
 <script>
 // paquetes de la escena 2: entran volando y quedan flotando
 // [id, demora, x inicial, x final, y, giro inicial, giro final]
-const P = [["p1",0.0,-560,90,300,-18,-8],["p2",0.2,1140,580,280,24,10],["p3",0.4,-500,340,580,-30,3]];
+const P = [["p1",0.0,-560,90,300,-18,-8],["p2",0.2,1140,580,280,24,10],["p3",0.4,-500,360,560,-20,0]];
 // cierre: el camión del logo entra andando desde la izquierda y va "trayendo" el resto del logo detrás
 const LOGO_W = 1540, TRUCK_X = 1170, SCALE = 760 / LOGO_W;
 function logoDrive(t) {
