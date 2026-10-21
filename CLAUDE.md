@@ -52,7 +52,9 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
    (ej. "El viaje de tu paquete", "Desde 1957"); los carruseles de consulta (sucursales) quedan como carrusel.
    `diseno.html` con `.scene` + `plantillas/motion.css` y `plantillas/motion.js` (ver ejemplos en `publicaciones/*-reel-*`),
    revisar con `python3 -I plantillas/render_video.py <html> --preview 2,5,9` y exportar sin `--preview` (genera `lancarg.mp4`).
-   Programar con facebookData/instagramData type REEL. Sin música (Fran la agrega si quiere).
+   Programar con facebookData/instagramData type REEL. Música (solo Instagram): `instagramData.audioConfiguration.audioId`
+   con un tema instrumental (sin voces, pedido de Fran) de la biblioteca comercial; buscar con un término (ej. "upbeat instrumental")
+   y elegir de los candidatos uno con "(Instrumental)" en el título. Facebook sale sin música.
    Cierre de todos los reels: escena `class="scene end white"` (fondo blanco, spacer, frase opcional y pill de WhatsApp)
    + `window.OVERLAY` con `marca/logo-lancarg-animado-horizontal.mp4` (logo animado aprobado por Fran, 5 s), que
    `render_video.py` superpone al exportar (start = inicio de la escena + 0.35, x 0, y 563, w 1080).
