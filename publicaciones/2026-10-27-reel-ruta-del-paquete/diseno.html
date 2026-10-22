@@ -14,9 +14,10 @@
 .call .emo{font-size:.85em}
 .call{width:560px}
 .call.r{text-align:right}.call.r .rule{transform-origin:right}
-#hook{position:absolute;left:70px;right:70px;top:420px;z-index:8;text-align:center}
+#hook{position:absolute;inset:0;padding:640px 70px 0;z-index:10;text-align:center;background:#fff;color:#02462D}
+#hook h1 em{color:#E70A0F}
 #hook h1{font-size:116px}
-#hookLogo{width:820px;margin-top:60px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}
+#hookLogo{width:860px;margin-top:70px}
 #shadeTop{position:absolute;left:0;right:0;top:0;height:820px;background:linear-gradient(180deg,rgba(1,40,26,.85),rgba(1,40,26,0));z-index:7}
 </style></head><body>
 <div id="stage">
@@ -67,7 +68,7 @@
       <div class="call" id="c4"><div class="k">4</div><div class="t">Al llegar, realizamos la <em>entrega a domicilio</em> <span class="emo">🚪</span></div><div class="rule"></div></div>
     </div>
     <div id="shadeTop"></div>
-    <div id="hook"><h1 data-in="0.3">Así viaja <em>tu mercadería</em> con:</h1><img id="hookLogo" data-in="0.8" src="../../marca/logo-lancarg-sobre-verde.png"></div>
+    <div id="hook"><h1 data-in="0.3">Así viaja <em>tu mercadería</em> con:</h1><img id="hookLogo" data-in="0.8" src="../../marca/logo-lancarg-color-transparente.png"></div>
   </div>
   <div class="scene end white" id="fin" data-start="16.6" data-end="21.95" data-nologo>
     <div class="spacer"></div>
@@ -91,7 +92,8 @@ const STOPS = [fracAtY(4520), fracAtY(3600), fracAtY(2700), 1.0];
 const START = 3.0, SPEED = 720, WAIT = 2.8; // sale después del título; px/s; segundos parado en cada cartel
 // arma la línea de tiempo: [tSalida, tLlegada, fDesde, fHasta] por tramo
 const SEG = []; let tt = START, ff = 0;
-STOPS.forEach(fr => { const d = (fr - ff) * (L - S0) / SPEED; SEG.push([tt, tt + d, ff, fr]); tt += d + WAIT; ff = fr; });
+// del 3 al 4 el tramo es largo: se acorta 1 s (pedido de Fran)
+STOPS.forEach((fr, i) => { let d = (fr - ff) * (L - S0) / SPEED; if (i === STOPS.length - 1) d = Math.max(1.4, d - 1.0); SEG.push([tt, tt + d, ff, fr]); tt += d + WAIT; ff = fr; });
 const ARRIVE = SEG[SEG.length - 1][1], END = ARRIVE + WAIT;
 const sm = x => x * x * (3 - 2 * x);         // arranca y frena suave
 function progress(t) {
