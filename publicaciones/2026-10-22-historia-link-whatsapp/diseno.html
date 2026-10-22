@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+:root{--g:#02462D;--g2:#013322;--r:#E70A0F;--w:#fff;--soft:#9fdcbb}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#777;font-family:Inter,sans-serif}
+.slide{width:1080px;position:relative;overflow:hidden;color:var(--w);margin-bottom:20px;background:var(--g2)}
+.feed{height:1350px}.story{height:1920px}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,40,26,.92) 0%,rgba(1,40,26,.6) 13%,rgba(1,40,26,0) 27%,rgba(1,40,26,0) 40%,rgba(1,51,34,.93) 68%,var(--g2) 100%)}
+.shade.top{background:linear-gradient(180deg,rgba(1,51,34,.95) 0%,rgba(1,51,34,.85) 30%,rgba(1,51,34,0) 55%)}
+.logo{position:absolute;top:60px;left:60px;width:400px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.55));z-index:5}
+.story .logo{top:120px;left:64px}
+.logo.br{top:auto;left:auto;right:56px;bottom:56px;width:280px}
+.txt{position:absolute;left:72px;right:72px;bottom:110px;z-index:4}
+.story .txt{bottom:260px}
+.txt.top{top:220px;bottom:auto}
+.story .txt.top{top:330px}
+.kicker{display:inline-block;background:var(--r);font-weight:800;font-size:30px;letter-spacing:.06em;text-transform:uppercase;padding:12px 22px;border-radius:6px;margin-bottom:30px}
+h1{font-family:"Inter Display",Inter;font-weight:900;font-size:100px;line-height:.98;letter-spacing:-.02em}
+.story h1{font-size:112px}
+h1 em{font-style:normal;color:#7fd3a6}
+h2{font-family:"Inter Display",Inter;font-weight:900;font-size:76px;line-height:1;letter-spacing:-.015em}
+.sub{font-size:44px;font-weight:500;margin-top:30px;line-height:1.25;color:#e6f5ec}
+.num{font-family:"Inter Display";font-weight:900;font-size:180px;line-height:.8;color:var(--r);margin-bottom:24px}
+.pill{display:inline-flex;align-items:center;gap:18px;margin-top:40px;background:#fff;color:var(--g);font-weight:800;font-size:46px;padding:24px 42px;border-radius:999px}
+.list{margin-top:44px;display:flex;flex-direction:column;gap:26px}
+.li{display:flex;align-items:center;gap:24px;font-size:42px;font-weight:600}
+.dot{flex:none;width:52px;height:52px;border-radius:50%;background:var(--r);display:grid;place-items:center;font-size:30px;font-weight:900}
+.bar{position:absolute;left:0;right:0;bottom:0;height:86px;background:var(--g);display:flex;align-items:center;justify-content:center;gap:34px;font-size:26px;font-weight:700;letter-spacing:.03em;color:var(--soft);z-index:6}
+.bar b{color:#fff;font-weight:700}
+.step{position:absolute;top:64px;right:64px;z-index:5;background:var(--r);font-weight:900;font-size:34px;padding:10px 24px;border-radius:999px}
+.card{background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.15);border-radius:28px;padding:30px 36px;margin-top:22px}
+.card .t{font-size:40px;font-weight:800}
+.card .d{font-size:32px;font-weight:500;color:#cfe9da;margin-top:8px}
+.card .p{font-size:36px;font-weight:700;margin-top:10px;display:flex;align-items:center;gap:12px}
+.mr{display:flex;gap:30px;align-items:flex-start}
+.mito{font-size:44px;font-weight:800;color:#ffb3b5}
+
+.dest{background:radial-gradient(120% 60% at 50% 0%,#0b5a3b 0%,var(--g) 45%,var(--g2) 100%)}
+.dest .logo{top:110px;left:50%;transform:translateX(-50%);width:440px}
+.dest .head{position:absolute;top:290px;left:70px;right:70px;text-align:center}
+.dest .head .kicker{margin-bottom:22px}
+.dest .head h2{font-size:92px}
+.cards{position:absolute;left:60px;right:60px;top:560px;display:flex;flex-direction:column;gap:22px}
+.c{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.16);border-radius:30px;padding:26px 34px;display:flex;gap:22px;align-items:flex-start}
+.c .ic{flex:none;margin-top:4px}
+.c .t{font-size:46px;font-weight:800}
+.c .d{font-size:34px;font-weight:500;color:#d4ecdf;margin-top:6px;line-height:1.25}
+.c .p{display:flex;align-items:center;gap:12px;font-size:38px;font-weight:700;margin-top:10px}
+.foot2{position:absolute;left:70px;right:70px;bottom:150px;text-align:center;font-size:34px;font-weight:600;color:#9fdcbb}
+
+.at .head{top:290px;z-index:4}
+.at h2{font-size:96px;line-height:1.02}
+.at .sub2{font-size:44px;font-weight:500;color:#d4ecdf;margin-top:26px}
+.bigwa{display:none!important;position:absolute;left:0;right:0;top:820px;display:flex;justify-content:center}
+.bigwa .circ{width:230px;height:230px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.num{position:absolute;left:0;right:0;top:1500px;text-align:center;z-index:4;font-family:Inter;font-size:inherit;line-height:1.3;color:#fff}
+.num .n{display:inline-block;background:#fff;color:var(--g);font-weight:900;font-size:76px;padding:22px 54px;border-radius:999px}
+.num .l{font-size:38px;font-weight:600;color:#9fdcbb;margin-top:28px}
+
+.lk .logo{top:120px;left:50%;transform:translateX(-50%);width:440px}
+.lk .head{position:absolute;top:320px;left:70px;right:70px;text-align:center}
+.lk .head h1{font-size:118px}
+.lk .box{position:absolute;left:50%;top:690px;width:440px;transform:translateX(-50%) rotate(-6deg);filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.lk .tap{position:absolute;left:70px;right:70px;top:1190px;text-align:center;font-size:56px;font-weight:800}
+.lk .arrow{position:absolute;left:50%;top:1280px;transform:translateX(-50%)}
+.lk .foot{position:absolute;left:70px;right:70px;bottom:170px;text-align:center;font-size:36px;font-weight:600;color:#cfe9da;line-height:1.5}
+.lk .foot b{color:#fff}
+</style></head><body>
+<div class="slide story dest lk">
+  <img class="logo" src="../../marca/logo-lancarg-sobre-verde.png">
+  <div class="head"><div class="kicker">Cotizaciones</div><h1>Cotizá tu envío <em>en un toque</em></h1></div>
+  <img class="box" src="../../fotos/recortes/caja-png-con-fondo-transparente-con-logo-lancarg.png">
+  <div class="tap">Tocá el link y escribinos</div>
+  <svg class="arrow" width="90" height="110" viewBox="0 0 90 110"><path d="M45 6V92M12 62l33 34 33-34" fill="none" stroke="#E70A0F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <!-- espacio libre (y 1420-1600) para el sticker de link que Fran agrega en Instagram -->
+  <div class="foot">o escribinos al <b>264 454-3612</b><br>Lunes a viernes de 8 a 16 h · Sábados de 8 a 12:30 h</div>
+</div>
+</body></html>
