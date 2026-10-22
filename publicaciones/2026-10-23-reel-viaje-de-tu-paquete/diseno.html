@@ -11,32 +11,32 @@
 .endq .trae{font-size:58px;font-weight:800;color:#02462D}
 </style></head><body>
 <div id="stage">
-  <div class="scene green" id="intro" data-start="0" data-end="2.8">
+  <div class="scene green" id="intro" data-start="0" data-end="3.3">
     <img class="pkg" id="box" src="../../fotos/recortes/caja-png-con-fondo-transparente-con-logo-lancarg.png" style="width:620px;left:230px">
     <div class="txt" style="top:1180px"><div class="kicker" data-in="0.4">Paso a paso</div>
       <h1 data-in="0.6">El recorrido de <em>tu paquete</em></h1></div>
   </div>
-  <div class="scene step" id="s1" data-start="2.8" data-end="5.4">
+  <div class="scene step" id="s1" data-start="3.3" data-end="6.4">
     <img class="bg" src="../../fotos/vertical/interior-deposito-bsas-con-cajas-a-la-izquierda-y-pallets-a-la-derecha.jpg"><div class="shade"></div>
     <div class="txt"><div class="num" data-in="0.2">1</div><h2 data-in="0.35">Recepción</h2>
       <div class="sub" data-in="0.6">Lo dejás en nuestras sucursales o lo retiramos.</div></div>
   </div>
-  <div class="scene step" id="s2" data-start="5.4" data-end="8.0">
+  <div class="scene step" id="s2" data-start="6.4" data-end="9.5">
     <img class="bg" src="../../fotos/vertical/autoelevador-descargando-camion-con-empleados.jpg"><div class="shade"></div>
     <div class="txt"><div class="num" data-in="0.2">2</div><h2 data-in="0.35">Carga</h2>
       <div class="sub" data-in="0.6">Lo clasificamos y lo cargamos con cuidado.</div></div>
   </div>
-  <div class="scene step" id="s3" data-start="8.0" data-end="10.6">
+  <div class="scene step" id="s3" data-start="9.5" data-end="12.6">
     <img class="bg" src="../../fotos/vertical/camion-scania-lancarg-bajo-un-cielo-azul.jpg"><div class="shade"></div>
     <div class="txt"><div class="num" data-in="0.2">3</div><h2 data-in="0.35">Viaje</h2>
       <div class="sub" data-in="0.6">Viaja en camiones propios asegurados.</div></div>
   </div>
-  <div class="scene step" id="s4" data-start="10.6" data-end="13.2">
+  <div class="scene step" id="s4" data-start="12.6" data-end="15.7">
     <img class="bg" src="../../fotos/vertical/entrega-de-caja-en-la-puerta-del-hogar.jpg"><div class="shade"></div>
     <div class="txt"><div class="num" data-in="0.2">4</div><h2 data-in="0.35">Entrega</h2>
       <div class="sub" data-in="0.6">Llega a destino y te lo entregamos.</div></div>
   </div>
-  <div class="scene end white" id="fin" data-start="13.2" data-end="18.55" data-nologo>
+  <div class="scene end white" id="fin" data-start="15.7" data-end="21.05" data-nologo>
     <!-- arriba del logo animado (que ocupa y≈730-990) -->
     <div class="endq" style="top:380px" data-in="0.15"><h2 style="margin:0">¿Querés <em>tranquilidad</em>?</h2></div>
     <div class="endq" style="top:520px" data-in="0.55"><div class="trae">Trae con</div></div>
@@ -51,7 +51,7 @@
   <img id="toplogo" src="../../marca/logo-lancarg-sobre-verde.png">
 </div>
 <script>
-window.OVERLAY = [{src: "../../marca/logo-lancarg-animado-horizontal.mp4", start: 13.55, x: 0, y: 715, w: 1080, crop: "1920:520:0:270"}];  // solo la franja del logo, para no tapar los textos
+window.OVERLAY = [{src: "../../marca/logo-lancarg-animado-horizontal.mp4", start: 16.05, x: 0, y: 715, w: 1080, crop: "1920:520:0:270"}];  // solo la franja del logo, para no tapar los textos
 window.extra = function (t) {
   // paquete que entra desde abajo girando y queda flotando
   const p = eo(t / 0.9), box = document.getElementById('box');
@@ -59,9 +59,9 @@ window.extra = function (t) {
   box.style.transform = `rotate(${-35 + 27 * p}deg)`;
   // barra de pasos: aparece con el paso 1 y se va con el cierre
   const tr = document.getElementById('track');
-  tr.style.opacity = cl((t - 2.8) / 0.35) * (1 - cl((t - 13.2) / 0.35));
-  tr.querySelectorAll('.fill').forEach((f, i) => { f.style.width = (cl((t - 2.8 - 2.6 * i) / 2.6) * 100) + '%'; });
-  tr.querySelectorAll('.lab').forEach((l, i) => { l.style.opacity = t >= 2.8 + 2.6 * i ? 1 : 0.5; });
+  tr.style.opacity = cl((t - 3.3) / 0.35) * (1 - cl((t - 15.7) / 0.35));
+  tr.querySelectorAll('.fill').forEach((f, i) => { f.style.width = (cl((t - 3.3 - 3.1 * i) / 3.1) * 100) + '%'; });
+  tr.querySelectorAll('.lab').forEach((l, i) => { l.style.opacity = t >= 3.3 + 3.1 * i ? 1 : 0.5; });
 };
 </script>
 <script src="../../plantillas/motion.js"></script>
