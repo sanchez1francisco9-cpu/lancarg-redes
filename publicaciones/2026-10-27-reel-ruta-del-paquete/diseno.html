@@ -7,14 +7,16 @@
 #world{position:absolute;left:0;top:0;width:1080px;height:5800px;will-change:transform;overflow:visible}
 #world svg{position:absolute;left:0;top:0}
 .call{position:absolute;width:520px;color:#fff;opacity:0}
-.call .t{font-family:"Inter Display",Inter;font-weight:900;font-size:64px;line-height:1.02;letter-spacing:-.015em;text-shadow:0 4px 18px rgba(0,0,0,.35)}
+.call .t{font-family:"Inter Display",Inter;font-weight:900;font-size:58px;line-height:1.02;letter-spacing:-.015em;text-shadow:0 4px 18px rgba(0,0,0,.35)}
 .call .t em{font-style:normal;color:#FFDE00}
 .call .rule{height:6px;background:#fff;border-radius:3px;margin-top:22px;transform-origin:left}
-.call .k{display:inline-block;background:#E70A0F;font-weight:800;font-size:28px;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border-radius:6px;margin-bottom:18px}
+.call .k{display:inline-grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#E70A0F;font-family:"Inter Display",Inter;font-weight:900;font-size:42px;margin-bottom:18px;box-shadow:0 0 0 6px rgba(255,255,255,.18)}
+.call .emo{font-size:.85em}
+.call{width:560px}
 .call.r{text-align:right}.call.r .rule{transform-origin:right}
-#hook{position:absolute;left:76px;right:76px;top:330px;z-index:8}
-#hook h1{font-size:124px}
-#hook .sub{font-size:52px;font-weight:700;margin-top:24px;color:#e6f5ec}
+#hook{position:absolute;left:70px;right:70px;top:420px;z-index:8;text-align:center}
+#hook h1{font-size:116px}
+#hookLogo{width:820px;margin-top:60px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}
 #shadeTop{position:absolute;left:0;right:0;top:0;height:820px;background:linear-gradient(180deg,rgba(1,40,26,.85),rgba(1,40,26,0));z-index:7}
 </style></head><body>
 <div id="stage">
@@ -39,12 +41,13 @@
           <rect x="-230" y="0" width="460" height="150" rx="10" fill="#E8E2D2"/><rect x="-230" y="0" width="460" height="34" fill="#E70A0F"/>
           <text x="0" y="105" text-anchor="middle" font-family="Inter" font-weight="900" font-size="44" fill="#02462D">BUENOS AIRES</text>
         </g>
-        <!-- depósito San Juan (destino) -->
-        <g transform="translate(540 60)">
-          <rect x="-230" y="-60" width="460" height="150" rx="10" fill="#E8E2D2"/><rect x="-230" y="56" width="460" height="34" fill="#E70A0F"/>
-          <text x="0" y="40" text-anchor="middle" font-family="Inter" font-weight="900" font-size="48" fill="#02462D">SAN JUAN</text>
+        <!-- casa del cliente (destino) -->
+        <g transform="translate(540 120)">
+          <rect x="-150" y="-110" width="300" height="200" rx="8" fill="#E8E2D2"/>
+          <path d="M-150 -110 L0 -10 L150 -110Z" fill="#cfc4ab"/><path d="M-150 90 L0 -10 L150 90Z" fill="#b9ad92"/>
+          <rect x="-28" y="90" width="56" height="34" rx="4" fill="#E70A0F"/>
         </g>
-        <image id="pkgEnd" href="../../fotos/recortes/caja-png-con-fondo-transparente-con-logo-lancarg.png" x="700" y="170" width="170" height="172" opacity="0"/>
+        <image id="pkgEnd" href="../../fotos/recortes/caja-png-con-fondo-transparente-con-logo-lancarg.png" x="650" y="230" width="150" height="172" opacity="0"/>
         <g id="pin" opacity="0"><path d="M0 0C-16 -21 -36 -38 -36 -62 -36 -82 -20 -98 0 -98 20 -98 36 -82 36 -62 36 -38 16 -21 0 0Z" fill="#E70A0F" stroke="#fff" stroke-width="6"/><circle cy="-62" r="13" fill="#fff"/></g>
         <!-- camión Lancarg visto desde arriba (mira hacia -y) -->
         <g id="truck">
@@ -57,15 +60,14 @@
           <rect x="-52" y="-100" width="104" height="10" fill="#E70A0F"/>
         </g>
       </svg>
-      <!-- carteles (posición en el mundo; aparecen cuando pasa el camión) -->
-      <div class="call l" id="c1" style="left:450px;top:4280px"><div class="k">Paso 1</div><div class="t">Lo retiramos en tu puerta o lo dejás en <em>nuestras sucursales</em></div><div class="rule"></div></div>
-      <div class="call r" id="c2" style="left:90px;top:3380px"><div class="k">Paso 2</div><div class="t">Viaja en <em>camiones propios</em></div><div class="rule"></div></div>
-      <div class="call l" id="c3" style="left:450px;top:2480px"><div class="k">Paso 3</div><div class="t">Salen camiones <em>todos los días</em></div><div class="rule"></div></div>
-      <div class="call r" id="c4" style="left:90px;top:1580px"><div class="k">Paso 4</div><div class="t">Carga asegurada de <em>punta a punta</em></div><div class="rule"></div></div>
-      <div class="call l" id="c5" style="left:450px;top:640px"><div class="k">Destino</div><div class="t">Y te lo <em>entregamos</em> en San Juan</div><div class="rule"></div></div>
+      <!-- carteles (textos de Fran); posición y momento los calcula el script según dónde frena el camión -->
+      <div class="call" id="c1"><div class="k">1</div><div class="t">Gestionamos <em>toda la logística</em> <span class="emo">📞</span></div><div class="rule"></div></div>
+      <div class="call" id="c2"><div class="k">2</div><div class="t">La retiramos o la entregás en <em>nuestra sucursal</em> <span class="emo">📦</span></div><div class="rule"></div></div>
+      <div class="call" id="c3"><div class="k">3</div><div class="t">La transportamos en vehículos <em>propios y asegurados</em> <span class="emo">🚚</span></div><div class="rule"></div></div>
+      <div class="call" id="c4"><div class="k">4</div><div class="t">Al llegar, realizamos la <em>entrega a domicilio</em> <span class="emo">🚪</span></div><div class="rule"></div></div>
     </div>
     <div id="shadeTop"></div>
-    <div id="hook"><div class="kicker" data-in="0.2">Paso a paso</div><h1 data-in="0.4">Así viaja <em>tu paquete</em></h1><div class="sub" data-in="0.8">De Buenos Aires ↔ San Juan</div></div>
+    <div id="hook"><h1 data-in="0.3">Así viaja <em>tu mercadería</em> con:</h1><img id="hookLogo" data-in="0.8" src="../../marca/logo-lancarg-sobre-verde.png"></div>
   </div>
   <div class="scene end white" id="fin" data-start="16.6" data-end="21.95" data-nologo>
     <div class="spacer"></div>
@@ -82,29 +84,53 @@ const tg = document.getElementById('trees');
 T.forEach(([x, y]) => [[0,0,46],[38,-22,34],[-34,-18,30],[10,30,32]].forEach(([dx, dy, r]) => {
   const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); c.setAttribute('cx', x + dx); c.setAttribute('cy', y + dy); c.setAttribute('r', r); tg.appendChild(c);
 }));
-const path = document.getElementById('path'), L = path.getTotalLength();
-const T0 = 0.6, T1 = 15.0;                       // el camión sale y llega
-const ease = x => x < 0 ? 0 : x > 1 ? 1 : (x < .08 ? x * x / .16 : x > .92 ? 1 - (1 - x) * (1 - x) / .16 : x - .04) / .92;
-const CALLS = [['c1', .17], ['c2', .33], ['c3', .5], ['c4', .66], ['c5', .9]];  // fracción del recorrido en que aparece cada cartel
+const path = document.getElementById('path'), L = path.getTotalLength(), S0 = 180;   // la ruta sigue debajo del depósito
+// frena en las curvas (ahí queda espacio libre al costado para el cartel) y al final en la casa
+function fracAtY(y) { let best = 0, bd = 1e9; for (let l = S0; l <= L; l += 4) { const d = Math.abs(path.getPointAtLength(l).y - y); if (d < bd) { bd = d; best = l; } } return (best - S0) / (L - S0); }
+const STOPS = [fracAtY(4520), fracAtY(3600), fracAtY(2700), 1.0];
+const START = 3.0, SPEED = 720, WAIT = 2.8; // sale después del título; px/s; segundos parado en cada cartel
+// arma la línea de tiempo: [tSalida, tLlegada, fDesde, fHasta] por tramo
+const SEG = []; let tt = START, ff = 0;
+STOPS.forEach(fr => { const d = (fr - ff) * (L - S0) / SPEED; SEG.push([tt, tt + d, ff, fr]); tt += d + WAIT; ff = fr; });
+const ARRIVE = SEG[SEG.length - 1][1], END = ARRIVE + WAIT;
+const sm = x => x * x * (3 - 2 * x);         // arranca y frena suave
+function progress(t) {
+  let f = 0;
+  for (const [a, b, f0, f1] of SEG) { if (t >= b) f = f1; else if (t > a) { f = f0 + (f1 - f0) * sm((t - a) / (b - a)); break; } else break; }
+  return f;
+}
+// coloca cada cartel al costado del camión, del lado libre de la ruta
+const pt = fr => path.getPointAtLength(S0 + (L - S0) * fr);
+STOPS.forEach((fr, i) => {
+  const p = pt(fr), el = document.getElementById('c' + (i + 1)), right = p.x < 540 || i === 3;
+  el.classList.add(right ? 'l' : 'r');
+  el.style.left = (right ? 470 : 70) + 'px';
+  el.style.top = (i === 3 ? p.y + 330 : p.y - 330) + 'px';
+});
+// duración de escenas según la línea de tiempo
+document.getElementById('road').dataset.end = END.toFixed(2);
+const fin = document.getElementById('fin'); fin.dataset.start = END.toFixed(2); fin.dataset.end = (END + 5.35).toFixed(2);
+window.OVERLAY[0].start = +(END + 0.35).toFixed(2);
 window.extra = function (t) {
-  const S0 = 180, f = ease((t - T0) / (T1 - T0)), s = S0 + (L - S0) * f;   // la ruta sigue debajo del depósito; el camión sale desde la puerta
+  const f = progress(t), s = S0 + (L - S0) * f;
   const p = path.getPointAtLength(s), q = path.getPointAtLength(Math.max(0, s - 4));
-  const ang = true ? Math.atan2(p.y - q.y, p.x - q.x) * 180 / Math.PI + 90 : 0;  // apunta hacia donde avanza
-  const truck = document.getElementById('truck');
-  truck.setAttribute('transform', `translate(${p.x} ${p.y}) rotate(${ang}) scale(1.15)`);
-  const cam = Math.min(5800 - 1920, Math.max(-520, p.y - 1920 * 0.64));   // puede subir más allá del borde para mostrar el destino
+  const ang = Math.atan2(p.y - q.y, p.x - q.x) * 180 / Math.PI + 90;
+  document.getElementById('truck').setAttribute('transform', `translate(${p.x} ${p.y}) rotate(${ang}) scale(1.15)`);
+  const cam = Math.min(5800 - 1920, Math.max(-520, p.y - 1920 * 0.64));
   document.getElementById('world').style.transform = `translateY(${-cam}px)`;
-  CALLS.forEach(([id, fr]) => {
-    const k = cl((f - fr) / 0.05), el = document.getElementById(id);
-    el.style.opacity = k; el.style.transform = `translateY(${(1 - eo(k)) * 50}px)`;
-    el.querySelector('.rule').style.transform = `scaleX(${eo(cl((f - fr - .02) / .05))})`;
+  SEG.forEach(([a, b], i) => {               // cada cartel aparece al frenar y queda en su lugar
+    const next = SEG[i + 1] ? SEG[i + 1][0] : 1e9;   // se va cuando el camión vuelve a arrancar
+    const k = cl((t - b + 0.15) / 0.45) * (1 - cl((t - next - 0.6) / 0.4)), el = document.getElementById('c' + (i + 1));
+    el.style.opacity = k; el.style.transform = `translateY(${(1 - eo(k)) * 50}px) scale(${0.94 + 0.06 * eo(k)})`;
+    el.querySelector('.rule').style.transform = `scaleX(${eo(cl((t - b - 0.2) / 0.5))})`;
   });
-  const hk = 1 - cl((t - 2.6) / 0.4); document.getElementById('hook').style.opacity = hk;
-  document.getElementById('shadeTop').style.opacity = 0.45 + 0.55 * hk;   // más oscuro mientras está el título
-  // llegada: aparece el pin y el paquete en el depósito de San Juan
-  const a = eo((t - T1 + 0.3) / 0.6), pin = document.getElementById('pin');
-  pin.setAttribute('opacity', cl((t - T1 + 0.3) / 0.15)); pin.setAttribute('transform', `translate(785 ${165 - (1 - a) * 120})`);
-  document.getElementById('pkgEnd').setAttribute('opacity', cl((t - T1 - 0.2) / 0.3));
+  const hk = 1 - cl((t - START + 0.2) / 0.4);
+  document.getElementById('hook').style.opacity = hk;
+  document.getElementById('shadeTop').style.opacity = 0.45 + 0.55 * hk;
+  document.getElementById('toplogo').style.visibility = hk > 0.5 ? 'hidden' : 'visible';
+  const a = eo((t - ARRIVE) / 0.6), pin = document.getElementById('pin');
+  pin.setAttribute('opacity', cl((t - ARRIVE) / 0.15)); pin.setAttribute('transform', `translate(700 ${215 - (1 - a) * 120})`);
+  document.getElementById('pkgEnd').setAttribute('opacity', cl((t - ARRIVE - 0.3) / 0.3));
 };
 </script>
 <script src="../../plantillas/motion.js"></script>
