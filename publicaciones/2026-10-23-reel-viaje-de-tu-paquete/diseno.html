@@ -7,6 +7,8 @@
 #track .fill{height:100%;width:0;background:var(--r)}
 #track .lab{font-size:30px;font-weight:800;margin-top:14px;letter-spacing:.02em;text-shadow:0 2px 8px rgba(0,0,0,.6)}
 .step .txt{top:1130px}
+.endq{position:absolute;left:0;right:0;text-align:center}
+.endq .trae{font-size:58px;font-weight:800;color:#02462D}
 </style></head><body>
 <div id="stage">
   <div class="scene green" id="intro" data-start="0" data-end="2.8">
@@ -17,7 +19,7 @@
   <div class="scene step" id="s1" data-start="2.8" data-end="5.4">
     <img class="bg" src="../../fotos/vertical/interior-deposito-bsas-con-cajas-a-la-izquierda-y-pallets-a-la-derecha.jpg"><div class="shade"></div>
     <div class="txt"><div class="num" data-in="0.2">1</div><h2 data-in="0.35">Recepción</h2>
-      <div class="sub" data-in="0.6">Lo dejás en nuestras sucursales o te lo retiramos.</div></div>
+      <div class="sub" data-in="0.6">Lo dejás en nuestras sucursales o lo retiramos.</div></div>
   </div>
   <div class="scene step" id="s2" data-start="5.4" data-end="8.0">
     <img class="bg" src="../../fotos/vertical/autoelevador-descargando-camion-con-empleados.jpg"><div class="shade"></div>
@@ -27,7 +29,7 @@
   <div class="scene step" id="s3" data-start="8.0" data-end="10.6">
     <img class="bg" src="../../fotos/vertical/camion-scania-lancarg-bajo-un-cielo-azul.jpg"><div class="shade"></div>
     <div class="txt"><div class="num" data-in="0.2">3</div><h2 data-in="0.35">Viaje</h2>
-      <div class="sub" data-in="0.6">Viaja en camiones propios, que salen todos los días.</div></div>
+      <div class="sub" data-in="0.6">Viaja en camiones propios asegurados.</div></div>
   </div>
   <div class="scene step" id="s4" data-start="10.6" data-end="13.2">
     <img class="bg" src="../../fotos/vertical/entrega-de-caja-en-la-puerta-del-hogar.jpg"><div class="shade"></div>
@@ -35,9 +37,10 @@
       <div class="sub" data-in="0.6">Llega a destino y te lo entregamos.</div></div>
   </div>
   <div class="scene end white" id="fin" data-start="13.2" data-end="18.55" data-nologo>
-    <div class="spacer"></div>
-    <h2 data-in="1.8">Un solo paquete<br><em>también viaja</em></h2>
-    <div class="pill" data-in="2.2"><span style="font-size:60px">📲</span><span>Cotizá por WhatsApp<small>264 454-3612</small></span></div>
+    <!-- arriba del logo animado (que ocupa y≈730-990) -->
+    <div class="endq" style="top:380px" data-in="0.15"><h2 style="margin:0">¿Querés <em>tranquilidad</em>?</h2></div>
+    <div class="endq" style="top:520px" data-in="0.55"><div class="trae">Traelo con:</div></div>
+    <div class="endq" style="top:1110px" data-in="2.0"><div class="pill" style="margin:0"><span style="font-size:60px">📲</span><span>Cotizá por WhatsApp<small>264 454-3612</small></span></div></div>
   </div>
   <div id="track">
     <div class="seg"><div class="bar"><div class="fill"></div></div><div class="lab">Recepción</div></div>
@@ -48,7 +51,7 @@
   <img id="toplogo" src="../../marca/logo-lancarg-sobre-verde.png">
 </div>
 <script>
-window.OVERLAY = [{src: "../../marca/logo-lancarg-animado-horizontal.mp4", start: 13.55, x: 0, y: 563, w: 1080}];
+window.OVERLAY = [{src: "../../marca/logo-lancarg-animado-horizontal.mp4", start: 13.55, x: 0, y: 715, w: 1080, crop: "1920:520:0:270"}];  // solo la franja del logo, para no tapar los textos
 window.extra = function (t) {
   // paquete que entra desde abajo girando y queda flotando
   const p = eo(t / 0.9), box = document.getElementById('box');

@@ -2,7 +2,7 @@
 El HTML define window.DURATION (segundos) y window.render(t), que dibuja el cuadro del segundo t.
 Uso: python3 -I plantillas/render_video.py publicaciones/<carpeta>/diseno.html [salida.mp4] [--preview 1,4,8]
 Con --preview solo guarda JPG de esos segundos para revisar antes de exportar.
-Si el HTML define window.OVERLAY = [{src, start, x, y, w}], esos videos (ruta relativa al HTML) se superponen
+Si el HTML define window.OVERLAY = [{src, start, x, y, w, crop?}], esos videos (ruta relativa al HTML) se superponen
 al exportar desde el segundo `start` (ej. el logo animado del cierre). En --preview no aparecen."""
 import sys, os, subprocess
 from playwright.sync_api import sync_playwright
@@ -33,7 +33,8 @@ with sync_playwright() as p:
         overlays = pg.evaluate("window.OVERLAY || []")
         for ov in overlays:
             src = os.path.join(out_dir, ov["src"]); tmp = out + ".tmp.mp4"
-            fc = (f"[1:v]scale={ov['w']}:-2,setpts=PTS-STARTPTS+{ov['start']}/TB[ov];"
+            crop = f"crop={ov['crop']}," if ov.get("crop") else ""   # opcional: "w:h:x:y" del video original
+            fc = (f"[1:v]{crop}scale={ov['w']}:-2,setpts=PTS-STARTPTS+{ov['start']}/TB[ov];"
                   f"[0:v][ov]overlay={ov['x']}:{ov['y']}:eof_action=repeat")
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", out, "-i", src, "-filter_complex", fc,
                             "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-profile:v", "high", "-crf", "18",
