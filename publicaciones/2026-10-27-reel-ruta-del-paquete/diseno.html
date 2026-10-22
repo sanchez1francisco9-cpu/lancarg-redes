@@ -14,6 +14,7 @@
 .call .emo{font-size:.85em}
 .call{width:560px}
 .call.r{text-align:right}.call.r .rule{transform-origin:right}
+.call.c{text-align:center}.call.c .rule{width:60%;margin-left:20%}
 #hook{position:absolute;inset:0;padding:640px 70px 0;z-index:10;text-align:center;background:#fff;color:#02462D}
 #hook h1 em{color:#E70A0F}
 #hook h1{font-size:116px}
@@ -32,7 +33,7 @@
           <path d="M1140 4700 C 960 4640 760 4760 820 4930 C 880 5100 1060 5100 1140 5050Z"/>
         </g>
         <!-- banquina + asfalto + línea punteada -->
-        <defs><path id="path" d="M540 5600 L540 5420 C 540 5000 250 4900 250 4520 S 830 3980 830 3600 S 250 3080 250 2700 S 830 2180 830 1800 S 250 1280 250 900 S 540 560 540 380"/></defs>
+        <defs><path id="path" d="M540 5600 L540 5420 C 540 5000 250 4900 250 4520 S 830 3980 830 3600 S 250 3080 250 2700 S 540 2140 540 1800"/></defs>
         <use href="#path" fill="none" stroke="#1d7a52" stroke-width="290" stroke-linecap="round"/>
         <use href="#path" fill="none" stroke="#0e2a1f" stroke-width="240" stroke-linecap="round"/>
         <use href="#path" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="10" stroke-dasharray="60 55"/>
@@ -43,12 +44,12 @@
           <text x="0" y="105" text-anchor="middle" font-family="Inter" font-weight="900" font-size="44" fill="#02462D">BUENOS AIRES</text>
         </g>
         <!-- casa del cliente (destino) -->
-        <g transform="translate(540 120)">
+        <g transform="translate(540 1490)">
           <rect x="-150" y="-110" width="300" height="200" rx="8" fill="#E8E2D2"/>
           <path d="M-150 -110 L0 -10 L150 -110Z" fill="#cfc4ab"/><path d="M-150 90 L0 -10 L150 90Z" fill="#b9ad92"/>
           <rect x="-28" y="90" width="56" height="34" rx="4" fill="#E70A0F"/>
         </g>
-        <image id="pkgEnd" href="../../fotos/recortes/caja-png-con-fondo-transparente-con-logo-lancarg.png" x="650" y="230" width="150" height="172" opacity="0"/>
+        <image id="pkgEnd" href="../../fotos/recortes/caja-png-con-fondo-transparente-con-logo-lancarg.png" x="650" y="1600" width="150" height="172" opacity="0"/>
         <g id="pin" opacity="0"><path d="M0 0C-16 -21 -36 -38 -36 -62 -36 -82 -20 -98 0 -98 20 -98 36 -82 36 -62 36 -38 16 -21 0 0Z" fill="#E70A0F" stroke="#fff" stroke-width="6"/><circle cy="-62" r="13" fill="#fff"/></g>
         <!-- camión Lancarg visto desde arriba (mira hacia -y) -->
         <g id="truck">
@@ -92,8 +93,8 @@ const STOPS = [fracAtY(4520), fracAtY(3600), fracAtY(2700), 1.0];
 const START = 3.0, SPEED = 720, WAIT = 2.8; // sale después del título; px/s; segundos parado en cada cartel
 // arma la línea de tiempo: [tSalida, tLlegada, fDesde, fHasta] por tramo
 const SEG = []; let tt = START, ff = 0;
-// del 3 al 4 el tramo es largo: se acorta 1 s (pedido de Fran)
-STOPS.forEach((fr, i) => { let d = (fr - ff) * (L - S0) / SPEED; if (i === STOPS.length - 1) d = Math.max(1.4, d - 1.0); SEG.push([tt, tt + d, ff, fr]); tt += d + WAIT; ff = fr; });
+// los 4 tramos de ruta tienen el mismo largo, así el camión tarda lo mismo entre carteles
+STOPS.forEach((fr, i) => { let d = (fr - ff) * (L - S0) / SPEED; SEG.push([tt, tt + d, ff, fr]); tt += d + WAIT; ff = fr; });
 const ARRIVE = SEG[SEG.length - 1][1], END = ARRIVE + WAIT;
 const sm = x => x * x * (3 - 2 * x);         // arranca y frena suave
 function progress(t) {
@@ -107,7 +108,10 @@ STOPS.forEach((fr, i) => {
   const p = pt(fr), el = document.getElementById('c' + (i + 1)), right = p.x < 540 || i === 3;
   el.classList.add(right ? 'l' : 'r');
   el.style.left = (right ? 470 : 70) + 'px';
-  el.style.top = (i === 3 ? p.y + 330 : p.y - 330) + 'px';
+  el.style.top = (p.y - 330) + 'px';
+  if (i === 3) {                              // el último va centrado arriba de la casa
+    el.className = 'call c'; el.style.left = '90px'; el.style.width = '900px'; el.style.top = (p.y - 850) + 'px';
+  }
 });
 // duración de escenas según la línea de tiempo
 document.getElementById('road').dataset.end = END.toFixed(2);
@@ -131,7 +135,7 @@ window.extra = function (t) {
   document.getElementById('shadeTop').style.opacity = 0.45 + 0.55 * hk;
   document.getElementById('toplogo').style.visibility = hk > 0.5 ? 'hidden' : 'visible';
   const a = eo((t - ARRIVE) / 0.6), pin = document.getElementById('pin');
-  pin.setAttribute('opacity', cl((t - ARRIVE) / 0.15)); pin.setAttribute('transform', `translate(700 ${215 - (1 - a) * 120})`);
+  pin.setAttribute('opacity', cl((t - ARRIVE) / 0.15)); pin.setAttribute('transform', `translate(700 ${1585 - (1 - a) * 120})`);
   document.getElementById('pkgEnd').setAttribute('opacity', cl((t - ARRIVE - 0.3) / 0.3));
 };
 </script>
