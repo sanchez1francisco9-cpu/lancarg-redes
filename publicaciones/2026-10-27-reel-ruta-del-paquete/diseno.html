@@ -4,7 +4,7 @@
 /* Reel: el camión de Lancarg avanza por una ruta vista desde arriba; la cámara lo sigue y van apareciendo los carteles.
    Idea adaptada (no copiada) de una referencia de otro transporte: textos y estilo propios. */
 #road{background:#02462D}
-#world{position:absolute;left:0;top:0;width:1080px;height:5600px;will-change:transform;overflow:visible}
+#world{position:absolute;left:0;top:0;width:1080px;height:5800px;will-change:transform;overflow:visible}
 #world svg{position:absolute;left:0;top:0}
 .call{position:absolute;width:520px;color:#fff;opacity:0}
 .call .t{font-family:"Inter Display",Inter;font-weight:900;font-size:64px;line-height:1.02;letter-spacing:-.015em;text-shadow:0 4px 18px rgba(0,0,0,.35)}
@@ -20,7 +20,7 @@
 <div id="stage">
   <div class="scene" id="road" data-start="0" data-end="16.6">
     <div id="world">
-      <svg width="1080" height="5600" viewBox="0 0 1080 5600">
+      <svg width="1080" height="5800" viewBox="0 0 1080 5800">
         <!-- campos -->
         <g fill="#0a5a3a" opacity=".55">
           <path d="M-60 3900 C 180 3760 420 3900 380 4100 C 340 4300 60 4380 -60 4300Z"/>
@@ -29,13 +29,13 @@
           <path d="M1140 4700 C 960 4640 760 4760 820 4930 C 880 5100 1060 5100 1140 5050Z"/>
         </g>
         <!-- banquina + asfalto + línea punteada -->
-        <defs><path id="path" d="M540 5420 C 540 5000 250 4900 250 4520 S 830 3980 830 3600 S 250 3080 250 2700 S 830 2180 830 1800 S 250 1280 250 900 S 540 560 540 380"/></defs>
+        <defs><path id="path" d="M540 5600 L540 5420 C 540 5000 250 4900 250 4520 S 830 3980 830 3600 S 250 3080 250 2700 S 830 2180 830 1800 S 250 1280 250 900 S 540 560 540 380"/></defs>
         <use href="#path" fill="none" stroke="#1d7a52" stroke-width="290" stroke-linecap="round"/>
         <use href="#path" fill="none" stroke="#0e2a1f" stroke-width="240" stroke-linecap="round"/>
         <use href="#path" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="10" stroke-dasharray="60 55"/>
         <g id="trees" fill="#013322"></g>
         <!-- depósito Buenos Aires (inicio) -->
-        <g transform="translate(540 5470)">
+        <g transform="translate(540 5650)">
           <rect x="-230" y="0" width="460" height="150" rx="10" fill="#E8E2D2"/><rect x="-230" y="0" width="460" height="34" fill="#E70A0F"/>
           <text x="0" y="105" text-anchor="middle" font-family="Inter" font-weight="900" font-size="44" fill="#02462D">BUENOS AIRES</text>
         </g>
@@ -87,12 +87,12 @@ const T0 = 0.6, T1 = 15.0;                       // el camión sale y llega
 const ease = x => x < 0 ? 0 : x > 1 ? 1 : (x < .08 ? x * x / .16 : x > .92 ? 1 - (1 - x) * (1 - x) / .16 : x - .04) / .92;
 const CALLS = [['c1', .17], ['c2', .33], ['c3', .5], ['c4', .66], ['c5', .9]];  // fracción del recorrido en que aparece cada cartel
 window.extra = function (t) {
-  const f = ease((t - T0) / (T1 - T0)), s = L * f;
+  const S0 = 180, f = ease((t - T0) / (T1 - T0)), s = S0 + (L - S0) * f;   // la ruta sigue debajo del depósito; el camión sale desde la puerta
   const p = path.getPointAtLength(s), q = path.getPointAtLength(Math.max(0, s - 4));
-  const ang = s > 4 ? Math.atan2(p.y - q.y, p.x - q.x) * 180 / Math.PI + 90 : 0;  // apunta hacia donde avanza
+  const ang = true ? Math.atan2(p.y - q.y, p.x - q.x) * 180 / Math.PI + 90 : 0;  // apunta hacia donde avanza
   const truck = document.getElementById('truck');
-  truck.setAttribute('transform', `translate(${p.x} ${p.y}) rotate(${s > 4 ? ang : 0}) scale(1.15)`);
-  const cam = Math.min(5600 - 1920, Math.max(-520, p.y - 1920 * 0.64));   // puede subir más allá del borde para mostrar el destino
+  truck.setAttribute('transform', `translate(${p.x} ${p.y}) rotate(${ang}) scale(1.15)`);
+  const cam = Math.min(5800 - 1920, Math.max(-520, p.y - 1920 * 0.64));   // puede subir más allá del borde para mostrar el destino
   document.getElementById('world').style.transform = `translateY(${-cam}px)`;
   CALLS.forEach(([id, fr]) => {
     const k = cl((f - fr) / 0.05), el = document.getElementById(id);
