@@ -10,7 +10,8 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
   Usar las frases de la sección "Frases y forma de hablar de Lancarg" y anotar ahí cada frase o corrección nueva de Fran.
   Para el feed, seguir la sección "Estilo de diseño para feed" (títulos en dos líneas blanco/rojo, franjas diagonales, títulos aprobados).
   Estilo favorito de Fran (oct-2026), usarlo seguido y variarlo: "foto real unida al diseño" (fondo blanco arriba con logo y título,
-  foto que se funde con el blanco abajo, diagonales rojas/verdes en esquinas, sin tapar camiones). Base: `publicaciones/ejemplo-foto-y-diseno/`.
+  foto que se funde con el blanco abajo, diagonales rojas/verdes en esquinas, sin tapar camiones). Estilo por defecto para publicaciones e historias.
+  Bases: `publicaciones/ejemplo-foto-y-diseno/` (texto centrado), `ejemplo-foto-y-diseno-2/` (texto a la izquierda, espejado) y `2026-10-28-historia-foto-diseno/` (historia).
   Menos degradado verde: alternar con fotos limpias (sombra neutra solo detrás del texto, cajas/barras sólidas o fondo blanco); el verde en detalles.
 - Logo: sobre fondo verde o foto usar `marca/logo-lancarg-sobre-verde.png` (rojo original + letras verdes pasadas a blanco,
   aprobado por Fran), sin recuadro, con sombra suave y con la parte de arriba de la foto oscurecida para que se lea.
