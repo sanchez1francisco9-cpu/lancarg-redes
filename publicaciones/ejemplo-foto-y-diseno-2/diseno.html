@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Variante 2 del estilo "foto real unida al diseño": texto a la izquierda, diagonales espejadas. */
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#777;font-family:Inter,sans-serif}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:#fff;color:#02462D}
+.photo{position:absolute;left:0;top:572px;width:1080px;height:778px;object-fit:cover;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.35) 14%,#000 34%);mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.35) 14%,#000 34%)}
+.logo{position:absolute;left:70px;top:56px;width:340px}
+.kick{position:absolute;left:70px;top:212px;display:inline-block;background:#E70A0F;color:#fff;font-weight:800;font-size:30px;letter-spacing:.1em;text-transform:uppercase;padding:10px 20px;border-radius:4px}
+h1{position:absolute;left:70px;right:60px;top:278px;font-family:"Inter Display",Inter;font-weight:900;font-size:80px;line-height:1;letter-spacing:-.025em;text-transform:uppercase}
+h1 .r{color:#E70A0F}
+.bar{position:absolute;left:70px;top:532px;width:120px;height:6px;background:#E70A0F}
+.sub{position:absolute;left:70px;top:556px;font-size:36px;font-weight:600;color:#1d2b25}
+.d{position:absolute;transform:skewX(35deg)}
+.tl1{right:-60px;top:-20px;width:200px;height:140px;background:#E70A0F}
+.tl2{right:170px;top:-20px;width:70px;height:140px;border:4px solid #E70A0F;border-top:0;border-bottom:0}
+.bl1{left:-170px;bottom:-10px;width:470px;height:190px;background:#E70A0F}
+.bl2{left:260px;bottom:-10px;width:100px;height:190px;background:#02462D}
+.bl3{left:420px;bottom:-10px;width:30px;height:190px;border-right:4px solid #E70A0F}
+.blk{position:absolute;left:0;top:660px;width:250px;height:96px;background:#02462D}
+.blk::after{content:"";position:absolute;right:-56px;top:0;width:112px;height:96px;background:#02462D;transform:skewX(35deg)}
+.cta{position:absolute;left:50px;bottom:40px;color:#fff;font-weight:800;font-size:32px;line-height:1.25;z-index:2}
+.cta small{display:block;font-size:26px;font-weight:600;opacity:.9}
+</style></head><body>
+<div class="slide">
+  <img class="photo" src="../../fotos/camion-lancarg-en-muelle-logistico.jpg">
+  <div class="d tl1"></div><div class="d tl2"></div>
+  <img class="logo" src="../../marca/versiones/1-principal-color.png">
+  <div class="kick">Comercios y emprendedores</div>
+  <h1>Comprá en<br>Buenos Aires,<br><span class="r">recibilo en San Juan</span></h1>
+  <div class="bar"></div>
+  <div class="sub">Lo retiramos o lo dejás en nuestra sucursal.</div>
+  <div class="blk"></div>
+  <div class="d bl1"></div><div class="d bl2"></div><div class="d bl3"></div>
+  <div class="cta"><small>Cotizá por WhatsApp</small>264 454-3612</div>
+</div>
+</body></html>
