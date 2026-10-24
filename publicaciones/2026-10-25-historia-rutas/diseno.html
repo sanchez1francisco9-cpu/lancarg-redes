@@ -4,7 +4,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#000}
 #stage{width:1080px;height:1920px;position:relative;overflow:hidden;background:#fff;font-family:Inter,sans-serif;color:#02462D}
-#logo{position:absolute;left:50%;top:150px;width:560px;transform:translateX(-50%)}
+#logo{position:absolute;left:50%;top:170px;width:520px;transform:translateX(-50%)}
 .kick{position:absolute;left:0;right:0;top:400px;text-align:center;font-size:34px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#E70A0F}
 .con{position:absolute;left:0;right:0;top:385px;text-align:center;font-size:56px;font-weight:700;color:#E70A0F}
 h1{position:absolute;left:60px;right:60px;top:470px;text-align:center;font-family:"Inter Display",Inter;font-weight:900;font-size:76px;line-height:1.05;letter-spacing:-.02em}
@@ -19,6 +19,14 @@ h1 .arr{color:#E70A0F}
 .foot{position:absolute;left:0;right:0;top:1660px;text-align:center}
 .foot .t{font-size:46px;font-weight:800}
 .pill{display:inline-flex;align-items:center;gap:18px;margin-top:28px;background:#02462D;color:#fff;font-weight:800;font-size:42px;padding:22px 40px;border-radius:999px}
+.d{position:absolute;transform:skewX(-35deg);z-index:3}
+.tr1{right:-120px;top:-20px;width:260px;height:190px;background:#E70A0F}
+.tr2{right:80px;top:-20px;width:100px;height:190px;border:4px solid #E70A0F;border-top:0;border-bottom:0}
+.br1{right:-170px;bottom:-10px;width:470px;height:200px;background:#E70A0F}
+.br2{right:260px;bottom:-10px;width:100px;height:200px;background:#02462D}
+.br3{right:420px;bottom:-10px;width:30px;height:200px;border-left:4px solid #E70A0F}
+.cta{position:absolute;right:50px;bottom:44px;text-align:right;color:#fff;font-weight:800;font-size:32px;line-height:1.25;z-index:4}
+.cta small{display:block;font-size:26px;font-weight:600;opacity:.9}
 </style></head><body>
 <div id="stage">
   <img id="logo" src="../../marca/versiones/1-principal-color.png">
@@ -52,7 +60,9 @@ h1 .arr{color:#E70A0F}
     <g id="routes"></g>
   </svg>
   <div style="position:absolute;left:0;right:0;top:640px;height:160px;background:linear-gradient(#fff,rgba(255,255,255,0))"></div><div style="position:absolute;left:0;right:0;top:1480px;height:170px;background:linear-gradient(rgba(255,255,255,0),#fff)"></div>
-  <div class="foot"><div class="t">Camiones todos los días</div><div class="pill">📲 Cotizá por WhatsApp · 264 454-3612</div></div>
+  <div class="foot" style="top:1620px"><div class="t">Camiones todos los días</div></div>
+  <div class="d tr1"></div><div class="d tr2"></div><div class="d br1"></div><div class="d br2"></div><div class="d br3"></div>
+  <div class="cta"><small>Cotizá por WhatsApp</small>264 454-3612</div>
 </div>
 <script>
 const NS='http://www.w3.org/2000/svg', R=document.getElementById('routes');
