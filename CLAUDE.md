@@ -8,6 +8,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
 - Leer la Guía de contenido (doc de Claude): https://claude.ai/code/artifact/da1707bc-728b-4f0f-b727-094289d8617d
   Ahí están el foco (paquetería chica), los valores, el tono, las reglas, los teléfonos y las ideas de formatos.
   Usar las frases de la sección "Frases y forma de hablar de Lancarg" y anotar ahí cada frase o corrección nueva de Fran.
+  Para el feed, seguir la sección "Estilo de diseño para feed" (títulos en dos líneas blanco/rojo, franjas diagonales, títulos aprobados).
 - Logo: sobre fondo verde o foto usar `marca/logo-lancarg-sobre-verde.png` (rojo original + letras verdes pasadas a blanco,
   aprobado por Fran), sin recuadro, con sombra suave y con la parte de arriba de la foto oscurecida para que se lea.
   Sobre fondo blanco o claro, usar el logo original a color. No inventar otras versiones del logo.
