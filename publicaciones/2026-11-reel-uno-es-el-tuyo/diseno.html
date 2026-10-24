@@ -1,0 +1,121 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../plantillas/motion.css">
+<style>
+/* Reel minimalista oscuro: idea adaptada (no copiada) de un reel de logística; colores y textos de Lancarg. */
+#stage{background:#0d0f0e}
+.dark{background:#0d0f0e}
+.cap{position:absolute;z-index:2;left:76px;top:250px;right:76px;font-size:64px;font-weight:600;line-height:1.2;color:#fff;letter-spacing:-.01em}
+.cap b{color:var(--r);font-weight:800}
+#grid{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#grid i{position:absolute;width:46px;height:86px;border-radius:6px;background:#2a2e2c}
+#hit{position:absolute;width:46px;height:86px;border-radius:6px;background:var(--r)}
+.br{position:absolute;z-index:2;border:4px solid #fff;width:26px;height:26px}
+.br.a{border-right:0;border-bottom:0}.br.b{border-left:0;border-bottom:0}.br.c{border-right:0;border-top:0}.br.d{border-left:0;border-top:0}
+#s2 .dim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.6) 20%,rgba(0,0,0,.15) 38%,rgba(0,0,0,.1) 60%,rgba(0,0,0,.45) 100%)}
+#route{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.city{position:absolute;font-size:46px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.city small{display:block;font-size:30px;font-weight:600;color:#9aa19e;letter-spacing:.08em;margin-bottom:6px}
+#label{position:absolute;left:190px;width:700px;top:560px;background:#f4f5f4;color:#111;border-radius:10px;padding:46px 50px;box-shadow:0 40px 80px rgba(0,0,0,.6)}
+#label .hd{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #111;padding-bottom:22px}
+#label .hd img{width:300px}
+#label .hd span{font-size:24px;font-weight:700;letter-spacing:.1em;color:#555}
+#label .k{font-size:22px;font-weight:700;letter-spacing:.14em;color:#777;margin-top:30px}
+#label .code{font-family:"Inter Display",Inter;font-weight:900;font-size:150px;line-height:.95;letter-spacing:-.01em;color:#02462D}
+#label .city2{font-size:32px;font-weight:600;color:#333}
+#label .sep{display:flex;align-items:center;gap:20px;margin:18px 0 0;color:var(--r);font-size:56px;font-weight:900}
+#label .sep::after{content:"";flex:1;height:3px;background:#ccc}
+#label .bar{margin-top:36px;background:var(--r);color:#fff;font-weight:800;font-size:32px;letter-spacing:.12em;padding:14px 22px;border-radius:4px}
+#label .bc{margin-top:26px;height:110px;background:repeating-linear-gradient(90deg,#111 0 4px,transparent 4px 9px,#111 9px 11px,transparent 11px 15px,#111 15px 21px,transparent 21px 24px)}
+.endq{position:absolute;left:0;right:0;text-align:center}
+.endq .trae{font-size:58px;font-weight:800;color:#02462D}
+</style></head><body>
+<div id="stage">
+  <!-- 1. Muchos paquetes; uno se ilumina en rojo -->
+  <div class="scene dark" id="s1" data-start="0" data-end="4.6" data-nologo>
+    <div id="grid"></div>
+    <div class="cap" id="cap1a">Muchos paquetes viajan cada día.</div>
+    <div class="cap" id="cap1b" style="opacity:0">Uno es <b>el tuyo.</b></div>
+  </div>
+  <!-- 2. Foto real del depósito -->
+  <div class="scene" id="s2" data-start="4.4" data-end="7.8" data-nologo>
+    <img class="bg" src="../../fotos/vertical/interior-deposito-bsas-con-mucha-mercaderia.jpg"><div class="dim"></div>
+    <div class="cap" data-in="0.4">Lo cuidamos <b>como propio.</b></div>
+    <div class="br a" id="b2a"></div><div class="br b" id="b2b"></div><div class="br c" id="b2c"></div><div class="br d" id="b2d"></div>
+  </div>
+  <!-- 3. La ruta: línea roja que baja con el paquete -->
+  <div class="scene dark" id="s3" data-start="7.6" data-end="11.6" data-nologo>
+    <svg id="route" viewBox="0 0 1080 1920">
+      <path id="rp" d="M540 560 V900 Q540 940 580 940 H640 Q680 940 680 980 V1160 Q680 1200 640 1200 H580 Q540 1200 540 1240 V1560" fill="none" stroke="#E70A0F" stroke-width="8" stroke-linecap="round"/>
+      <rect id="pk" x="-18" y="-18" width="36" height="36" rx="4" fill="#fff"/>
+    </svg>
+    <div class="city" style="left:600px;top:470px" data-in="0.2"><small>Desde</small>Buenos Aires</div>
+    <div class="city" style="left:600px;top:1560px" id="dest"><small>Hasta</small>San Juan</div>
+    <div class="cap" data-in="0.3">Viaja en nuestra flota <b>propia y moderna.</b></div>
+  </div>
+  <!-- 4. Etiqueta de envío -->
+  <div class="scene dark" id="s4" data-start="11.4" data-end="14.6" data-nologo>
+    <div class="cap" data-in="0.2">Y llega a <b>destino.</b></div>
+    <div id="label">
+      <div class="hd"><img src="../../marca/logo-lancarg-color-transparente.png"><span>RUTA ↔</span></div>
+      <div class="k">ORIGEN</div><div class="code">BUE</div><div class="city2">Buenos Aires</div>
+      <div class="sep">↕</div>
+      <div class="k">DESTINO</div><div class="code">SJ</div><div class="city2">San Juan</div>
+      <div class="bar" id="lbar">EN VIAJE</div>
+      <div class="bc"></div>
+    </div>
+  </div>
+  <!-- 5. Cierre blanco + logo animado -->
+  <div class="scene end white" id="fin" data-start="14.6" data-end="19.95" data-nologo>
+    <div class="endq" style="top:380px" data-in="0.15"><h2 style="margin:0">¿Querés <em>tranquilidad</em>?</h2></div>
+    <div class="endq" style="top:520px" data-in="0.55"><div class="trae">Trae con</div></div>
+    <div class="endq" style="top:1110px" data-in="2.0"><div class="pill" style="margin:0"><span style="font-size:60px">📲</span><span>Cotizá por WhatsApp<small>264 454-3612</small></span></div></div>
+  </div>
+</div>
+<script>
+window.OVERLAY = [{src: "../../marca/logo-lancarg-animado-horizontal.mp4", start: 14.95, x: 0, y: 715, w: 1080, crop: "1920:520:0:270"}];
+// grilla de paquetes
+const G = document.getElementById('grid'), COLS = 12, ROWS = 14, PX = 86, PY = 128, X0 = 36, Y0 = 420;
+const HIT = [6, 7]; // columna, fila del paquete que se ilumina
+const cells = [];
+for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+  const i = document.createElement('i'); i.style.left = (X0 + c * PX) + 'px'; i.style.top = (Y0 + r * PY) + 'px';
+  i.dataset.k = Math.random(); G.appendChild(i); cells.push(i);
+}
+const hit = document.createElement('div'); hit.id = 'hit'; G.appendChild(hit);
+const hx = X0 + HIT[0] * PX, hy = Y0 + HIT[1] * PY;
+const brs = ['a', 'b', 'c', 'd'].map(k => { const b = document.createElement('div'); b.className = 'br ' + k; G.appendChild(b); return b; });
+function placeBr(list, x, y, w, h, o) {
+  const pos = [[x, y], [x + w - 26, y], [x, y + h - 26], [x + w - 26, y + h - 26]];
+  list.forEach((b, i) => { b.style.left = pos[i][0] + 'px'; b.style.top = pos[i][1] + 'px'; b.style.opacity = o; });
+}
+const rp = document.getElementById('rp'), RL = rp.getTotalLength(), pk = document.getElementById('pk');
+const b2 = ['b2a', 'b2b', 'b2c', 'b2d'].map(id => document.getElementById(id));
+window.extra = function (t) {
+  // 1. grilla: aparece, se ilumina uno, zoom hacia él
+  const fz = 1 - cl((t - 3.3) / 0.35);
+  cells.forEach(i => { i.style.opacity = (0.35 + 0.65 * cl((t - 0.1 - i.dataset.k * 0.9) / 0.4)) * fz; });
+  brs.forEach(b => b.style.visibility = t > 3.4 ? 'hidden' : 'visible');
+  const on = cl((t - 2.0) / 0.3);
+  hit.style.left = hx + 'px'; hit.style.top = hy + 'px'; hit.style.opacity = on;
+  const sb = 1 - eo((t - 2.0) / 0.5);
+  placeBr(brs, hx - 22 - 30 * sb, hy - 22 - 30 * sb, 90 + 60 * sb, 130 + 60 * sb, on);
+  document.getElementById('cap1a').style.opacity = 1 - cl((t - 1.9) / 0.3);
+  document.getElementById('cap1b').style.opacity = cl((t - 2.2) / 0.3);
+  const z = Math.pow(cl((t - 3.4) / 1.2), 2.2), sc = 1 + 40 * z;
+  G.style.transformOrigin = (hx + 23) + 'px ' + (hy + 43) + 'px'; G.style.transform = `scale(${sc})`;
+  // 2. marcos que se cierran sobre la foto
+  const t2 = sceneTime(t, 's2'), m = 1 - eo((t2 - 0.3) / 0.8);
+  placeBr(b2, 300 - 120 * m, 820 - 120 * m, 480 + 240 * m, 520 + 240 * m, cl((t2 - 0.3) / 0.3));
+  // 3. paquete que recorre la ruta
+  const t3 = sceneTime(t, 's3'), p = eo((t3 - 0.5) / 2.6);
+  rp.style.strokeDasharray = RL; rp.style.strokeDashoffset = RL * (1 - p);
+  const pt = rp.getPointAtLength(RL * p); pk.setAttribute('transform', `translate(${pt.x} ${pt.y})`);
+  document.getElementById('dest').style.opacity = cl((t3 - 2.6) / 0.4);
+  // 4. etiqueta que sube y cambia a ENTREGADO
+  const t4 = sceneTime(t, 's4'), q = eo((t4 - 0.1) / 0.7);
+  const lb = document.getElementById('label'); lb.style.transform = `translateY(${(1 - q) * 300}px) rotate(${(1 - q) * -4}deg)`; lb.style.opacity = q;
+  document.getElementById('lbar').textContent = t4 > 1.7 ? 'ENTREGADO ✓' : 'EN VIAJE';
+};
+</script>
+<script src="../../plantillas/motion.js"></script>
+</body></html>
