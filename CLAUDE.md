@@ -15,9 +15,9 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
   Segundo estilo aprobado: "título sobre foto con caja roja" (foto completa, título en el cielo con la palabra clave en caja roja,
   número grande "1957" opcional, logo chico abajo). Base: `publicaciones/ejemplo-titulo-caja-roja/`.
   Menos degradado verde: alternar con fotos limpias (sombra neutra solo detrás del texto, cajas/barras sólidas o fondo blanco); el verde en detalles.
-- Logo: sobre fondo verde o foto usar `marca/logo-lancarg-sobre-verde.png` (rojo original + letras verdes pasadas a blanco,
-  aprobado por Fran), sin recuadro, con sombra suave y con la parte de arriba de la foto oscurecida para que se lea.
-  Sobre fondo blanco o claro, usar el logo original a color. No inventar otras versiones del logo.
+- Logo: preferir SIEMPRE el logo a color, rojo y verde (`marca/versiones/1-principal-color.png`); a Fran no le gusta tanto el rojo y blanco (25-oct-2026).
+  Sobre fondo blanco va directo; sobre foto, ponerlo en una zona blanca del diseño o en una pestaña blanca redondeada abajo al centro
+  (ver `publicaciones/ejemplo-titulo-caja-roja/`). `logo-lancarg-sobre-verde.png` (rojo y blanco) solo si no hay otra opción. No inventar otras versiones del logo.
 - Fotos: nunca recortar personas ni camiones. En historias (9:16) las fotos horizontales van completas
   (object-fit: contain, centradas un poco arriba) sobre el fondo verde; ver `photo()` en plantillas/generar_semana_*.py.
 - Vocabulario: decir "paquete/paquetes", no "caja"; "camiones" en plural (ej. "Camiones todos los días");
