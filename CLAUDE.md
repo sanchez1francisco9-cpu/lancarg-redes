@@ -12,12 +12,10 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
   Estilo favorito de Fran (oct-2026), usarlo seguido y variarlo: "foto real unida al diseño" (fondo blanco arriba con logo y título,
   foto que se funde con el blanco abajo, diagonales rojas/verdes en esquinas, sin tapar camiones). Estilo por defecto para publicaciones e historias.
   Bases: `publicaciones/ejemplo-foto-y-diseno/` (texto centrado), `ejemplo-foto-y-diseno-2/` (texto a la izquierda, espejado) y `2026-10-28-historia-foto-diseno/` (historia).
-  Segundo estilo aprobado: "título sobre foto con caja roja" (foto completa, título en el cielo con la palabra clave en caja roja,
-  número grande "1957" opcional, logo chico abajo). Base: `publicaciones/ejemplo-titulo-caja-roja/`.
+  Estilo "título sobre foto con caja roja": descartado por Fran (25-oct-2026), no usarlo.
   Menos degradado verde: alternar con fotos limpias (sombra neutra solo detrás del texto, cajas/barras sólidas o fondo blanco); el verde en detalles.
 - Logo: preferir SIEMPRE el logo a color, rojo y verde (`marca/versiones/1-principal-color.png`); a Fran no le gusta tanto el rojo y blanco (25-oct-2026).
-  Sobre fondo blanco va directo; sobre foto, ponerlo en una zona blanca del diseño o en una pestaña blanca redondeada abajo al centro
-  (ver `publicaciones/ejemplo-titulo-caja-roja/`). `logo-lancarg-sobre-verde.png` (rojo y blanco) solo si no hay otra opción. No inventar otras versiones del logo.
+  Sobre fondo blanco va directo; sobre foto, ponerlo en una zona blanca del diseño o en una pestaña blanca redondeada abajo al centro. `logo-lancarg-sobre-verde.png` (rojo y blanco) solo si no hay otra opción. No inventar otras versiones del logo.
 - Fotos: nunca recortar personas ni camiones. En historias (9:16) las fotos horizontales van completas
   (object-fit: contain, centradas un poco arriba) sobre el fondo verde; ver `photo()` en plantillas/generar_semana_*.py.
 - Vocabulario: decir "paquete/paquetes", no "caja"; "camiones" en plural (ej. "Camiones todos los días");
