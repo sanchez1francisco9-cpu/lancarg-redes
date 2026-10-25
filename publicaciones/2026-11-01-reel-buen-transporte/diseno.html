@@ -1,51 +1,78 @@
 <!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../plantillas/motion.css">
 <style>
-/* "¿Qué hace que un transporte sea bueno?" Idea adaptada (no copiada) de un carrusel de otro transporte.
-   Estilo de siempre: foto + sombra verde, poco texto. */
+/* Desde 1957, con el estilo "foto real unida al diseño": blanco arriba, foto que se funde abajo, diagonales. */
 .scene{isolation:isolate}
-.step .txt{top:1180px}
+.w{background:#fff;color:#02462D}
+.ph{position:absolute;left:0;top:520px;width:1080px;height:1920px;object-fit:cover;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 10%,rgba(0,0,0,.5) 18%,#000 26%);mask-image:linear-gradient(180deg,transparent 0%,transparent 10%,rgba(0,0,0,.5) 18%,#000 26%)}
+.lg{position:absolute;left:50%;top:150px;width:520px;transform:translateX(-50%)}
+.c{position:absolute;left:60px;right:60px;text-align:center}
+.yl{font-size:46px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#1d2b25}
+.yr{font-family:"Inter Display",Inter;font-weight:900;font-size:300px;line-height:.9;letter-spacing:-.03em;color:#E70A0F}
+.w h2{font-family:"Inter Display",Inter;font-weight:900;font-size:96px;line-height:1.02;letter-spacing:-.02em;text-transform:uppercase;color:#02462D}
+.w h2 em{font-style:normal;color:#E70A0F}
+.k{display:inline-block;background:#E70A0F;color:#fff;font-weight:800;font-size:34px;letter-spacing:.12em;text-transform:uppercase;padding:12px 26px;border-radius:4px;margin-bottom:26px}
+.bar{width:140px;height:6px;background:#E70A0F;margin:34px auto 0}
+.d{position:absolute;transform:skewX(-35deg);z-index:3}
+.tr1{right:-120px;top:-20px;width:260px;height:190px;background:#E70A0F}
+.tr2{right:80px;top:-20px;width:100px;height:190px;border:4px solid #E70A0F;border-top:0;border-bottom:0}
+.br1{right:-170px;bottom:-10px;width:470px;height:200px;background:#E70A0F}
+.br2{right:260px;bottom:-10px;width:100px;height:200px;background:#02462D}
+.br3{right:420px;bottom:-10px;width:30px;height:200px;border-left:4px solid #E70A0F}
 .endq{position:absolute;left:0;right:0;text-align:center}
 .endq .trae{font-size:58px;font-weight:800;color:#02462D}
+.num{font-family:"Inter Display",Inter;font-weight:300;font-size:200px;line-height:.9;color:transparent;-webkit-text-stroke:5px #E70A0F;margin-bottom:10px}
 </style></head><body>
 <div id="stage">
-  <div class="scene" id="s0" data-start="0" data-end="3.3">
-    <img class="bg" src="../../fotos/vertical/scania-cruzando-el-desierto.jpg"><div class="shade"></div>
-    <div class="txt" style="top:1150px"><h1 data-in="0.2">¿Qué hace que un transporte sea <em>bueno</em>?</h1></div>
+  <div class="scene w" id="s0" data-start="0" data-end="3.3" data-nologo>
+    <img class="ph" src="../../fotos/vertical/scania-cruzando-el-desierto.jpg" style="top:0px;-webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 38%,rgba(0,0,0,.5) 45%,#000 52%);mask-image:linear-gradient(180deg,transparent 0%,transparent 38%,rgba(0,0,0,.5) 45%,#000 52%)">
+    <div class="d tr1"></div><div class="d tr2"></div><div class="d br1"></div><div class="d br2"></div><div class="d br3"></div>
+    <img class="lg" src="../../marca/versiones/1-principal-color.png">
+    <div class="c" style="top:430px"><h2 data-in="0.2" style="font-size:88px">¿Qué hace que<br>un transporte<br>sea <em>bueno</em>?</h2><div class="bar" data-in="0.6"></div></div>
   </div>
-  <div class="scene step" id="s1" data-start="3.3" data-end="6.3">
-    <img class="bg" src="../../fotos/vertical/camion-scania-lancarg-bajo-un-cielo-azul.jpg"><div class="shade"></div>
-    <div class="txt"><div class="num" data-in="0.15">1</div><h2 data-in="0.3">Cumplir <em>lo acordado</em></h2></div>
+  <div class="scene w" id="s1" data-start="3.3" data-end="6.3" data-nologo>
+    <img class="ph" src="../../fotos/vertical/camion-scania-lancarg-bajo-un-cielo-azul.jpg" style="top:300px;-webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%);mask-image:linear-gradient(180deg,transparent 0%,transparent 32%,rgba(0,0,0,.5) 39%,#000 46%)">
+    <div class="d tr1"></div><div class="d tr2"></div><div class="d br1"></div><div class="d br2"></div><div class="d br3"></div>
+    <img class="lg" src="../../marca/versiones/1-principal-color.png">
+    <div class="c" style="top:400px"><div class="num" data-in="0.15">01</div><h2 data-in="0.3" style="font-size:88px">Cumplir<br><em>lo acordado</em></h2></div>
   </div>
-  <div class="scene step" id="s2" data-start="6.3" data-end="9.3">
-    <img class="bg" src="../../fotos/vertical/autoelevador-descargando-camion-con-empleados.jpg"><div class="shade"></div>
-    <div class="txt"><div class="num" data-in="0.15">2</div><h2 data-in="0.3">Cuidar tu paquete <em>como propio</em></h2></div>
+  <div class="scene w" id="s2" data-start="6.3" data-end="9.3" data-nologo>
+    <img class="ph" src="../../fotos/vertical/autoelevador-descargando-camion-con-empleados.jpg" style="top:300px;-webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%);mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%)">
+    <div class="d tr1"></div><div class="d tr2"></div><div class="d br1"></div><div class="d br2"></div><div class="d br3"></div>
+    <img class="lg" src="../../marca/versiones/1-principal-color.png">
+    <div class="c" style="top:400px"><div class="num" data-in="0.15">02</div><h2 data-in="0.3" style="font-size:88px">Cuidar tu paquete<br><em>como propio</em></h2></div>
   </div>
-  <div class="scene step" id="s3" data-start="9.3" data-end="12.3">
-    <img class="bg" src="../../fotos/vertical/entrega-de-caja-en-la-puerta-del-hogar.jpg"><div class="shade"></div>
-    <div class="txt"><div class="num" data-in="0.15">3</div><h2 data-in="0.3">Trato <em>directo</em></h2></div>
+  <div class="scene w" id="s3" data-start="9.3" data-end="12.3" data-nologo>
+    <img class="ph" src="../../fotos/vertical/entrega-de-caja-en-la-puerta-del-hogar.jpg" style="top:300px;-webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%);mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%)">
+    <div class="d tr1"></div><div class="d tr2"></div><div class="d br1"></div><div class="d br2"></div><div class="d br3"></div>
+    <img class="lg" src="../../marca/versiones/1-principal-color.png">
+    <div class="c" style="top:400px"><div class="num" data-in="0.15">03</div><h2 data-in="0.3" style="font-size:88px">Trato<br><em>directo</em></h2></div>
   </div>
-  <div class="scene step" id="s4" data-start="12.3" data-end="15.3">
-    <img class="bg" src="../../fotos/vertical/3-camiones-lancarg-bajo-cielo-azul.jpg"><div class="shade"></div>
-    <div class="txt"><div class="num" data-in="0.15">4</div><h2 data-in="0.3">Flota propia <em>y moderna</em></h2></div>
+  <div class="scene w" id="s4" data-start="12.3" data-end="15.3" data-nologo>
+    <img class="ph" src="../../fotos/vertical/3-camiones-lancarg-bajo-cielo-azul.jpg" style="top:300px;-webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%);mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%)">
+    <div class="d tr1"></div><div class="d tr2"></div><div class="d br1"></div><div class="d br2"></div><div class="d br3"></div>
+    <img class="lg" src="../../marca/versiones/1-principal-color.png">
+    <div class="c" style="top:400px"><div class="num" data-in="0.15">04</div><h2 data-in="0.3" style="font-size:88px">Flota propia<br><em>y moderna</em></h2></div>
   </div>
-  <div class="scene step" id="s5" data-start="15.3" data-end="18.3">
-    <img class="bg" src="../../fotos/vertical/camion-en-deposito-bsas.jpg"><div class="shade"></div>
-    <div class="txt"><div class="num" data-in="0.15">5</div><h2 data-in="0.3">Gente que <em>conoce la ruta</em></h2></div>
+  <div class="scene w" id="s5" data-start="15.3" data-end="18.3" data-nologo>
+    <img class="ph" src="../../fotos/vertical/camion-en-deposito-bsas.jpg" style="top:300px;-webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%);mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%)">
+    <div class="d tr1"></div><div class="d tr2"></div><div class="d br1"></div><div class="d br2"></div><div class="d br3"></div>
+    <img class="lg" src="../../marca/versiones/1-principal-color.png">
+    <div class="c" style="top:400px"><div class="num" data-in="0.15">05</div><h2 data-in="0.3" style="font-size:88px">Gente que<br><em>conoce la ruta</em></h2></div>
   </div>
-  <div class="scene step" id="s6" data-start="18.3" data-end="21.3">
-    <img class="bg" src="../../fotos/vertical/camion-visto-de-atras-a-adelante.jpg"><div class="shade"></div>
-    <div class="txt"><div class="num" data-in="0.15">6</div><h2 data-in="0.3">Resolver <em>los imprevistos</em></h2></div>
+  <div class="scene w" id="s6" data-start="18.3" data-end="21.3" data-nologo>
+    <img class="ph" src="../../fotos/vertical/camion-visto-de-atras-a-adelante.jpg" style="top:300px;-webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%);mask-image:linear-gradient(180deg,transparent 0%,transparent 24%,rgba(0,0,0,.5) 31%,#000 38%)">
+    <div class="d tr1"></div><div class="d tr2"></div><div class="d br1"></div><div class="d br2"></div><div class="d br3"></div>
+    <img class="lg" src="../../marca/versiones/1-principal-color.png">
+    <div class="c" style="top:400px"><div class="num" data-in="0.15">06</div><h2 data-in="0.3" style="font-size:88px">Resolver<br><em>los imprevistos</em></h2></div>
   </div>
   <div class="scene end white" id="fin" data-start="21.3" data-end="26.65" data-nologo>
     <div class="endq" style="top:380px" data-in="0.15"><h2 style="margin:0">¿Querés <em>tranquilidad</em>?</h2></div>
     <div class="endq" style="top:520px" data-in="0.55"><div class="trae">Trae con</div></div>
     <div class="endq" style="top:1110px" data-in="2.0"><div class="pill" style="margin:0"><span style="font-size:60px">📲</span><span>Cotizá por WhatsApp<small>264 454-3612</small></span></div></div>
   </div>
-  <img id="toplogo" src="../../marca/logo-lancarg-sobre-verde.png">
 </div>
-<script>
-window.OVERLAY = [{src: "../../marca/logo-lancarg-animado-horizontal.mp4", start: 21.65, x: 0, y: 715, w: 1080, crop: "1920:520:0:270"}];
-</script>
+<script>window.OVERLAY = [{src: "../../marca/logo-lancarg-animado-horizontal.mp4", start: 21.65, x: 0, y: 715, w: 1080, crop: "1920:520:0:270"}];</script>
 <script src="../../plantillas/motion.js"></script>
 </body></html>

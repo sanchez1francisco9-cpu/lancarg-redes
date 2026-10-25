@@ -3,14 +3,14 @@
 <style>
 /* Reel: el camión de Lancarg avanza por una ruta vista desde arriba; la cámara lo sigue y van apareciendo los carteles.
    Idea adaptada (no copiada) de una referencia de otro transporte: textos y estilo propios. */
-#road{background:#02462D}
+#road{background:#f3f4f2}
 #world{position:absolute;left:0;top:0;width:1080px;height:5800px;will-change:transform;overflow:visible}
 #world svg{position:absolute;left:0;top:0}
-.call{position:absolute;width:520px;color:#fff;opacity:0}
-.call .t{font-family:"Inter Display",Inter;font-weight:900;font-size:58px;line-height:1.02;letter-spacing:-.015em;text-shadow:0 4px 18px rgba(0,0,0,.35)}
-.call .t em{font-style:normal;color:#FFDE00}
-.call .rule{height:6px;background:#fff;border-radius:3px;margin-top:22px;transform-origin:left}
-.call .k{display:inline-grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#E70A0F;font-family:"Inter Display",Inter;font-weight:900;font-size:42px;margin-bottom:18px;box-shadow:0 0 0 6px rgba(255,255,255,.18)}
+.call{position:absolute;width:520px;color:#02462D;opacity:0}
+.call .t{font-family:"Inter Display",Inter;font-weight:900;font-size:58px;line-height:1.02;letter-spacing:-.015em;text-shadow:0 0 18px #fff,0 0 8px #fff}
+.call .t em{font-style:normal;color:#E70A0F}
+.call .rule{height:6px;background:#E70A0F;border-radius:3px;margin-top:22px;transform-origin:left}
+.call .k{display:inline-grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#E70A0F;font-family:"Inter Display",Inter;font-weight:900;font-size:42px;margin-bottom:18px;box-shadow:0 0 0 6px rgba(231,10,15,.15);color:#fff}
 .call .emo{font-size:.85em}
 .call{width:560px}
 .call.r{text-align:right}.call.r .rule{transform-origin:right}
@@ -19,14 +19,14 @@
 #hook h1 em{color:#E70A0F}
 #hook h1{font-size:116px}
 #hookLogo{width:860px;margin-top:70px}
-#shadeTop{position:absolute;left:0;right:0;top:0;height:820px;background:linear-gradient(180deg,rgba(1,40,26,.85),rgba(1,40,26,0));z-index:7}
+#shadeTop{position:absolute;left:0;right:0;top:0;height:520px;background:linear-gradient(180deg,#fff 0%,#fff 45%,rgba(255,255,255,0));z-index:7}
 </style></head><body>
 <div id="stage">
   <div class="scene" id="road" data-start="0" data-end="16.6">
     <div id="world">
       <svg width="1080" height="5800" viewBox="0 0 1080 5800">
         <!-- campos -->
-        <g fill="#0a5a3a" opacity=".55">
+        <g fill="#dfe6e1" opacity="1">
           <path d="M-60 3900 C 180 3760 420 3900 380 4100 C 340 4300 60 4380 -60 4300Z"/>
           <path d="M1140 2500 C 900 2380 640 2500 690 2720 C 740 2930 1010 2960 1140 2880Z"/>
           <path d="M-60 1500 C 200 1420 400 1560 350 1760 C 300 1950 40 1980 -60 1900Z"/>
@@ -34,10 +34,10 @@
         </g>
         <!-- banquina + asfalto + línea punteada -->
         <defs><path id="path" d="M540 5600 L540 5420 C 540 5000 250 4900 250 4520 S 830 3980 830 3600 S 250 3080 250 2700 S 540 2140 540 1800"/></defs>
-        <use href="#path" fill="none" stroke="#1d7a52" stroke-width="290" stroke-linecap="round"/>
-        <use href="#path" fill="none" stroke="#0e2a1f" stroke-width="240" stroke-linecap="round"/>
+        <use href="#path" fill="none" stroke="#c9d1cc" stroke-width="290" stroke-linecap="round"/>
+        <use href="#path" fill="none" stroke="#3b403d" stroke-width="240" stroke-linecap="round"/>
         <use href="#path" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="10" stroke-dasharray="60 55"/>
-        <g id="trees" fill="#013322"></g>
+        <g id="trees" fill="#cdd8d0"></g>
         <!-- depósito Buenos Aires (inicio) -->
         <g transform="translate(540 5650)">
           <rect x="-230" y="0" width="460" height="150" rx="10" fill="#E8E2D2"/><rect x="-230" y="0" width="460" height="34" fill="#E70A0F"/>
@@ -76,7 +76,7 @@
     <h2 data-in="1.8">Cotizá <em>tu envío</em></h2>
     <div class="pill" data-in="2.2"><span style="font-size:60px">📲</span><span>Escribinos por WhatsApp<small>264 454-3612</small></span></div>
   </div>
-  <img id="toplogo" src="../../marca/logo-lancarg-sobre-verde.png" style="z-index:9">
+  <img id="toplogo" src="../../marca/versiones/1-principal-color.png" style="z-index:9;filter:none">
 </div>
 <script>
 window.OVERLAY = [{src: "../../marca/logo-lancarg-animado-horizontal.mp4", start: 16.95, x: 0, y: 563, w: 1080}];
