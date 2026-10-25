@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Estilo "título sobre foto con caja roja" (referencia Laurenzano, adaptado a Lancarg). Feed 1080x1350. */
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#777;font-family:Inter,sans-serif}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;margin-bottom:20px;color:#fff}
+.slide img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.1) 40%,rgba(0,0,0,0) 60%,rgba(0,0,0,.35) 100%)}
+.t{position:absolute;left:0;right:0;top:150px;text-align:center}
+.l1{font-size:66px;font-weight:400;letter-spacing:-.01em;text-shadow:0 3px 14px rgba(0,0,0,.45)}
+.box{display:inline-block;background:#E70A0F;font-family:"Inter Display",Inter;font-weight:900;font-size:84px;line-height:1;letter-spacing:-.02em;padding:10px 26px 14px;margin-top:10px}
+.big{position:absolute;left:0;right:0;top:190px;text-align:center;font-family:"Inter Display",Inter;font-weight:900;font-size:300px;line-height:.8;letter-spacing:-.04em;color:#fff;opacity:.95}
+.lg{position:absolute;left:50%;bottom:60px;width:360px;transform:translateX(-50%);filter:drop-shadow(0 3px 10px rgba(0,0,0,.55))}
+.foot{position:absolute;left:0;right:0;bottom:190px;text-align:center;font-size:54px;font-style:italic;font-weight:600;text-shadow:0 3px 14px rgba(0,0,0,.6)}
+</style></head><body>
+<div class="slide">
+  <img class="bg" src="../../fotos/vertical/scania-cruzando-el-desierto.jpg" style="object-position:50% 60%"><div class="sh"></div>
+  <div class="t"><div class="l1">Llevamos lo que necesitás,</div><div class="box">hasta donde lo necesitás</div></div>
+  <img class="lg" src="../../marca/logo-lancarg-sobre-verde.png">
+</div>
+<div class="slide">
+  <img class="bg" src="../../fotos/vertical/camion-frente-izquierdo.jpg" style="object-position:50% 85%"><div class="sh"></div>
+  <div class="big">1957</div>
+  <div class="t" style="top:80px"><div class="l1">Desde</div></div>
+  <div class="foot">Trayectoria que inspira <span style="background:#E70A0F;font-style:normal;padding:2px 14px">confianza</span></div>
+  <img class="lg" src="../../marca/logo-lancarg-sobre-verde.png">
+</div>
+</body></html>
