@@ -13,8 +13,8 @@ def ic(name, size=150):
     return (f'<div style="width:{size}px;height:{size}px;border-radius:50%;background:#E70A0F;display:grid;place-items:center;box-shadow:0 10px 24px rgba(231,10,15,.3)">'
             f'<svg viewBox="0 0 100 100" style="width:{int(size*.56)}px;height:{int(size*.56)}px">{ICON[name]}</svg></div>')
 
-def paso(n, icon, titulo, sub, foto, pos="50% 50%"):
-    return feed(photo=foto, photo_top=600, photo_pos=pos, fade=(8, 24), title=titulo, title_size=82, sub=sub,
+def paso(n, icon, titulo, sub, foto, pos="50% 50%", ph=None, top=600):
+    return feed(photo=foto, photo_top=top, photo_h=ph, photo_pos=pos, fade=(8, 24), title=titulo, title_size=82, sub=sub,
                 top={"logo": 70, "kick": 0, "h1": 330},
                 extra=f'<div style="position:absolute;left:50%;top:205px;transform:translateX(-50%);z-index:4">{ic(icon, 110)}</div>'
                       f'<div style="position:absolute;left:70px;top:230px;font-family:Inter Display,Inter;font-weight:300;font-size:90px;color:transparent;-webkit-text-stroke:3px #E70A0F;z-index:4">0{n}</div>')
@@ -25,13 +25,13 @@ beneficios = "".join(
     for i, t in [("escudo", "Cuidado de<br>punta a punta"), ("reloj", "Puntualidad<br>de verdad"), ("pin", "Rutas que<br>conocemos")])
 
 slides = [
-    feed(photo="operario-de-montacargas-en-deposito-industrial.jpg", photo_top=520, photo_pos="50% 60%", fade=(8, 24),
+    feed(photo="operario-de-montacargas-en-deposito-industrial.jpg", photo_top=560, photo_pos="50% 18%", fade=(8, 24),
          kick="Lancarg", title='Tu paquete<br><span class="r">en buenas manos</span>', title_size=96,
          sub='Deslizá y conocé <b>por qué →</b>', cta=False),
     paso(1, "escudo", 'Cuidado de<br><span class="r">punta a punta</span>', 'Del inicio <b>al destino</b>',
          "interior-de-deposito-san-juan-con-autoelevador-toyota.jpg", "50% 55%"),
     paso(2, "reloj", 'Puntualidad<br><span class="r">de verdad</span>', 'Camiones <b>todos los días</b>',
-         "deposito-interior-vista-desde-arriba.jpg", "50% 60%"),
+         "scania-blanca-cruzando-el-desierto-al-atardecer.jpg", "62% 50%", ph=640, top=560),
     paso(3, "pin", 'Rutas que conocemos<br><span class="r">de memoria</span>', 'Buenos Aires, Córdoba y Rosario<br><b>↔ San Juan y Mendoza</b>',
          "planchada-descarga-deposito-sj.jpg", "50% 60%"),
     feed(title='¿Querés<br><span class="r">tranquilidad?</span>', title_size=100, top={"logo": 70, "kick": 0, "h1": 260},
