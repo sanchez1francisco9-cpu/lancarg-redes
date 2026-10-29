@@ -34,10 +34,10 @@ slides = [
          "scania-blanca-cruzando-el-desierto-al-atardecer.jpg", "62% 50%", ph=640, top=560),
     paso(3, "pin", 'Rutas que conocemos<br><span class="r">de memoria</span>', 'Buenos Aires, Córdoba y Rosario<br><b>↔ San Juan y Mendoza</b>',
          "planchada-descarga-deposito-sj.jpg", "50% 60%"),
-    feed(title='<span class="r">¿Querés?</span>', title_size=130, top={"logo": 70, "kick": 0, "h1": 280},
-         extra=f'<div style="position:absolute;left:0;right:0;top:560px;display:flex;justify-content:center;gap:40px;z-index:4">{beneficios}</div>'
-               '<div style="position:absolute;left:0;right:0;top:900px;text-align:center;z-index:4"><div style="font-size:54px;font-weight:800;color:#02462D">Trae con</div>'
-               '<img src="../../marca/versiones/1-principal-color.png" style="width:520px;margin-top:10px"></div>'),
+    feed(title='<span class="r">¿Querés?</span>', title_size=130, top={"logo": 0, "kick": 0, "h1": 170}, logo=False,
+         extra=f'<div style="position:absolute;left:0;right:0;top:420px;display:flex;justify-content:center;gap:40px;z-index:4">{beneficios}</div>'
+               '<div style="position:absolute;left:0;right:0;top:760px;text-align:center;z-index:4"><div style="font-size:54px;font-weight:800;color:#02462D">Trae con</div>'
+               '<img src="../../marca/versiones/1-principal-color.png" style="width:760px;margin-top:6px"></div>'),
 ]
 d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "publicaciones", "2026-11-09-carrusel-buenas-manos")
 open(os.path.join(d, "diseno.html"), "w").write(page(slides))

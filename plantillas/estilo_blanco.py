@@ -35,7 +35,7 @@ def mask(a, b):
 
 
 def slide(kind, photo=None, photo_top=0, photo_h=None, photo_pos="50% 50%", fade=(24, 38), cut=None, cut_top=0, cut_w=70,
-          kick=None, title="", title_size=None, sub=None, top=None, cta=True, extra=""):
+          kick=None, title="", title_size=None, sub=None, top=None, cta=True, extra="", logo=True):
     H = 1920 if kind == "story" else 1350
     t = top or ({"logo": 260, "kick": 470, "h1": 540} if kind == "story" else {"logo": 70, "kick": 240, "h1": 300})
     size = title_size or (104 if kind == "story" else 92)
@@ -50,7 +50,8 @@ def slide(kind, photo=None, photo_top=0, photo_h=None, photo_pos="50% 50%", fade
     th = 190 if kind == "story" else 140
     out.append(f'<div class="d tr1" style="height:{th}px"></div><div class="d tr2" style="height:{th}px"></div>')
     lw = 560 if kind == "story" else 420
-    out.append(f'<img class="logo" src="{LOGO}" style="top:{t["logo"]}px;width:{lw}px">')
+    if logo:
+        out.append(f'<img class="logo" src="{LOGO}" style="top:{t["logo"]}px;width:{lw}px">')
     if kick:
         out.append(f'<div class="kick" style="top:{t["kick"]}px">{kick}</div>')
     out.append(f'<h1 style="top:{t["h1"]}px;font-size:{size}px">{title}</h1>')
