@@ -32,7 +32,8 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
   - `fotos/recortes/` — paquetes en PNG sin fondo para componer flyers libremente.
 - `marca/` — logos. `logo-lancarg-sobre-verde.png` para fondos verdes o fotos; `logo-lancarg-color-transparente.png` para fondos claros.
   - `marca/logo-lancarg-vector-original.pdf`: el logo en vector que pasó Fran (CorelDRAW). Usarlo de base para todo lo nuevo.
-  - `marca/versiones/`: principal, secundario (sin camión), simplificado (solo "Lancarg") e isotipo (solo el camión),
+  - `marca/versiones/`: principal, secundario (sin camión), simplificado (solo "Lancarg"), isotipo (solo el camión)
+    y 5-solo-texto ("Transportes Lancarg" sin calle ni camión, 30-oct-2026),
     cada uno en `-color` (fondos claros) y `-blanco` (verdes en blanco, para fondos verdes u oscuros), en SVG, PDF y PNG.
 - `pedidos/` — imágenes que Fran crea a pedido (también puede subirlas a Drive, carpeta "fotos lancarg").
 - `plantillas/` — `ejemplo-carrusel.html` (estilo de referencia) y `render.py`.
