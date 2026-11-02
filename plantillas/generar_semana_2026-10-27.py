@@ -83,8 +83,8 @@ write("2026-11-02-carrusel-paquete-que-no-llega", [
          extra=num(2), cta=False),
     feed(photo="exterior-deposito-con-mercaderia-y-camion.jpg", photo_top=520, photo_h=830, fade=(0, 18),
          title='Tu cliente<br><span class="r">pierde confianza</span>', title_size=84, extra=num(3), cta=False),
-    feed(photo="autoelevador-descargando-camion-con-empleados.jpg", photo_top=520, photo_h=830, fade=(0, 18),
-         title='¿Querés tranquilidad?<br><span class="r">Trae con</span>', title_size=80,
-         top={"logo": 300, "kick": 0, "h1": 90},
-         extra='<div class="sub" style="top:470px;font-size:30px">Camiones todos los días <b>·</b> Entregamos en destino</div>'),
+    feed(photo="autoelevador-descargando-camion-con-empleados.jpg", photo_top=600, photo_h=750, fade=(0, 18),
+         title='¿Querés tranquilidad?<br><span class="r">Trae con</span>', title_size=74,
+         top={"logo": 370, "kick": 0, "h1": 165},
+         extra='<div class="sub" style="top:548px;font-size:30px">Camiones todos los días <b>·</b> Entregamos en destino</div>'),
 ])
