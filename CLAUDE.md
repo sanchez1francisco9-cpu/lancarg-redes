@@ -37,6 +37,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
   - `marca/versiones/`: principal, secundario (sin camión), simplificado (solo "Lancarg"), isotipo (solo el camión)
     y 5-solo-texto ("Transportes Lancarg" sin calle ni camión, 30-oct-2026),
     cada uno en `-color` (fondos claros) y `-blanco` (verdes en blanco, para fondos verdes u oscuros), en SVG, PDF y PNG.
+- `marca/logo-lancarg-animado-vertical.mp4`: el logo animado en 9:16 (1080x1920, 5 s), para historias y reels (2-nov-2026).
 - `pedidos/` — imágenes que Fran crea a pedido (también puede subirlas a Drive, carpeta "fotos lancarg").
 - `plantillas/` — `ejemplo-carrusel.html` (estilo de referencia) y `render.py`.
 - `publicaciones/AAAA-MM-DD-tema/` — una carpeta por pieza: `diseno.html` + los JPG renderizados.
