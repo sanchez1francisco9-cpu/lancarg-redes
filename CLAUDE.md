@@ -21,6 +21,8 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
   (object-fit: contain, centradas un poco arriba) sobre el fondo verde; ver `photo()` en plantillas/generar_semana_*.py.
 - Vocabulario: decir "paquete/paquetes", no "caja"; "camiones" en plural (ej. "Camiones todos los días");
   "flota moderna" / "moderna flota" (ej. "Viaja en nuestra moderna flota").
+  No decir más "Trae con Lancarg" ni "trae tu mercadería": decir "Transportá tu mercadería con Lancarg" (Fran, 2-nov-2026).
+  Hablar con buen léxico, prolijo, sin frases muy coloquiales (Fran, 2-nov-2026).
   Rutas siempre con flecha doble ↔ (viajamos en los dos sentidos), nunca →.
 - Reglas que no se rompen: nunca mencionar la cantidad de camiones, no inventar reseñas, no copiar a la competencia,
   no usar Higgsfield ni generadores pagos.

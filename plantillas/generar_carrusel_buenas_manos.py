@@ -36,7 +36,7 @@ slides = [
          "planchada-descarga-deposito-sj.jpg", "50% 60%"),
     feed(title='<span class="r">¿Querés?</span>', title_size=130, top={"logo": 0, "kick": 0, "h1": 170}, logo=False,
          extra=f'<div style="position:absolute;left:0;right:0;top:420px;display:flex;justify-content:center;gap:40px;z-index:4">{beneficios}</div>'
-               '<div style="position:absolute;left:0;right:0;top:760px;text-align:center;z-index:4"><div style="font-size:54px;font-weight:800;color:#02462D">Trae con</div>'
+               '<div style="position:absolute;left:0;right:0;top:760px;text-align:center;z-index:4"><div style="font-size:54px;font-weight:800;color:#02462D">Transportá tu mercadería con</div>'
                '<img src="../../marca/versiones/1-principal-color.png" style="width:760px;margin-top:6px"></div>'),
 ]
 d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "publicaciones", "2026-11-09-carrusel-buenas-manos")
