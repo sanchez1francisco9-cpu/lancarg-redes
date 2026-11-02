@@ -78,7 +78,7 @@ write("2026-11-02-carrusel-paquete-que-no-llega", [
          sub='que el envío <b>→</b>', cta=False),
     feed(photo="interior-deposito-bsas-con-mucha-mercaderia-variada.jpg", photo_top=520, photo_h=830, fade=(0, 18),
          title='Frena tu venta<br><span class="r">o tu reposición</span>', title_size=84, extra=num(1), cta=False),
-    feed(photo="deposito-industrial-amplio-y-ordenado.jpg", photo_top=520, photo_h=830, photo_pos="50% 90%", fade=(0, 16),
+    feed(photo="deposito-industrial-amplio-y-ordenado.jpg", photo_top=520, photo_h=830, photo_pos="50% 38%", fade=(0, 16),
          title='Suma <span class="r">costos</span>', title_size=96, sub='Reclamos, reenvíos <b>y tiempo perdido</b>',
          extra=num(2), cta=False),
     feed(photo="exterior-deposito-con-mercaderia-y-camion.jpg", photo_top=520, photo_h=830, fade=(0, 18),
