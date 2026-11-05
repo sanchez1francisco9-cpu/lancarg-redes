@@ -16,8 +16,8 @@ dias = {
   vert("vertical/interior-deposito-bsas-con-mucha-mercaderia.jpg", 'Tu mercadería de<br>Flores y Once,<br><span class="r">en tu local</span>', fade=(38, 50)),
  ],
  "2026-11-05-historias": [
-  story(photo="hombre-entregando-caja-con-logo-de-lancarg-a-mujer.jpg", photo_top=1200, photo_h=720, fade=(0, 12), title_size=104, top={"logo": 230, "kick": 0, "h1": 480},
-        title='El transporte<br>lo hacen<br><span class="r">las personas</span>', sub='No son solo <b>camiones</b>'),
+  story(photo="hombre-entregando-caja-con-logo-de-lancarg-a-mujer.jpg", photo_top=960, photo_h=960, fade=(0, 12), title_size=104, top={"logo": 230, "kick": 0, "h1": 480},
+        title='El transporte<br>lo hacen<br><span class="r">las personas</span>'),
  ],
  "2026-11-06-historias": [
   vert("vertical/interior-deposito-bsas-con-cajas-a-la-izquierda-y-pallets-a-la-derecha.jpg", 'Logística que<br><span class="r">impulsa tus ventas</span>', fade=(34, 46)),
