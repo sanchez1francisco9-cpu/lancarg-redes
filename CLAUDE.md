@@ -38,7 +38,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
     y 5-solo-texto ("Transportes Lancarg" sin calle ni camión, 30-oct-2026),
     cada uno en `-color` (fondos claros) y `-blanco` (verdes en blanco, para fondos verdes u oscuros), en SVG, PDF y PNG.
 - `marca/logo-lancarg-animado-vertical.mp4`: el logo animado en 9:16 (1080x1920, 5 s), para historias y reels (2-nov-2026).
-  `marca/logo-lancarg-animado-vertical-whatsapp.mp4`: igual + pill de WhatsApp que entra a los 3 s (7 s; `plantillas/logo_whatsapp_vertical.py`, 4-nov-2026).
+  `marca/logo-lancarg-animado-vertical-web.mp4` (preferido por Fran) y `-whatsapp.mp4`: igual + pill con la web o el WhatsApp que entra a los 3 s (7 s; `plantillas/logo_whatsapp_vertical.py web|whatsapp`, 4-nov-2026).
 - `pedidos/` — imágenes que Fran crea a pedido (también puede subirlas a Drive, carpeta "fotos lancarg").
 - `plantillas/` — `ejemplo-carrusel.html` (estilo de referencia) y `render.py`.
 - `publicaciones/AAAA-MM-DD-tema/` — una carpeta por pieza: `diseno.html` + los JPG renderizados.

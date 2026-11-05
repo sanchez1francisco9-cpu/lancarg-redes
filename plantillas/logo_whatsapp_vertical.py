@@ -1,5 +1,5 @@
 """Logo animado vertical + número de WhatsApp que entra abajo con un "pop".
-Uso: python3 -I plantillas/logo_whatsapp_vertical.py   -> marca/logo-lancarg-animado-vertical-whatsapp.mp4
+Uso: python3 -I plantillas/logo_whatsapp_vertical.py [web|whatsapp] -> marca/logo-lancarg-animado-vertical-<modo>.mp4
 Momento del "pop" (para poner el sonido en la edición): T0 = 3.0 s.
 """
 import math, os, subprocess, tempfile
@@ -7,22 +7,27 @@ from playwright.sync_api import sync_playwright
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SRC = os.path.join(ROOT, "marca", "logo-lancarg-animado-vertical.mp4")
-OUT = os.path.join(ROOT, "marca", "logo-lancarg-animado-vertical-whatsapp.mp4")
+import sys
+MODE = sys.argv[1] if len(sys.argv) > 1 else "web"  # "web" o "whatsapp"
+OUT = os.path.join(ROOT, "marca", f"logo-lancarg-animado-vertical-{MODE}.mp4")
 FPS, T0, TOTAL = 30, 3.0, 7.0
 WA = ('<svg viewBox="0 0 24 24" width="70" height="70" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>')
+GLOBE = ('<svg viewBox="0 0 24 24" width="68" height="68" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">'
+         '<circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.8 3 2.8 16 0 19M12 2.5c-2.8 3-2.8 16 0 19"/></svg>')
+ICON, ICBG, SMALL, BIG = (GLOBE, "#E70A0F", "Visitá nuestra web", "lancarg.com.ar") if MODE == "web" else (WA, "#25D366", "Escribinos por WhatsApp", "264 454-3612")
 HTML = f"""<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;background:transparent;width:1080px;height:1920px;overflow:hidden;font-family:Inter,sans-serif}}
 #wrap{{position:absolute;left:0;right:0;top:1330px;display:flex;flex-direction:column;align-items:center}}
 #pill{{display:flex;align-items:center;gap:30px;background:#02462D;border-radius:999px;padding:26px 56px 26px 26px;
   box-shadow:0 24px 50px rgba(2,70,45,.28);position:relative;overflow:hidden}}
-#ic{{width:116px;height:116px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex:none}}
+#ic{{width:116px;height:116px;border-radius:50%;background:{ICBG};display:flex;align-items:center;justify-content:center;flex:none}}
 #tx{{color:#fff;line-height:1.05}}
 #tx small{{display:block;font-size:34px;font-weight:600;opacity:.9;letter-spacing:.02em}}
 #tx b{{display:block;font-size:76px;font-weight:900;letter-spacing:-.01em}}
 #shine{{position:absolute;top:-20%;bottom:-20%;width:120px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg)}}
 #line{{height:6px;background:#E70A0F;border-radius:3px;margin-top:40px}}
-</style></head><body><div id="wrap"><div id="pill"><div id="ic">{WA}</div>
-<div id="tx"><small>Escribinos por WhatsApp</small><b>264 454-3612</b></div><div id="shine"></div></div><div id="line"></div></div></body></html>"""
+</style></head><body><div id="wrap"><div id="pill"><div id="ic">{ICON}</div>
+<div id="tx"><small>{SMALL}</small><b>{BIG}</b></div><div id="shine"></div></div><div id="line"></div></div></body></html>"""
 
 
 def back(p, s=1.9):  # easeOutBack: pasa un poquito y vuelve (efecto "pop")
