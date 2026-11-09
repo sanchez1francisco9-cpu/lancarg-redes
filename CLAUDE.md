@@ -14,7 +14,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
   Estilo favorito de Fran (oct-2026), usarlo seguido y variarlo: "foto real unida al diseño" (fondo blanco arriba con logo y título,
   foto que se funde con el blanco abajo, diagonales rojas/verdes en esquinas, sin tapar camiones). Estilo por defecto para publicaciones e historias.
   Bases: `publicaciones/ejemplo-foto-y-diseno/` (texto centrado), `ejemplo-foto-y-diseno-2/` (texto a la izquierda, espejado) y `2026-10-28-historia-foto-diseno/` (historia).
-  Variante elegante con curvas (9-nov-2026, a confirmar por Fran): `publicaciones/ejemplo-curvas/` (pregunta arriba, foto entre curvas rojo/verde, pie blanco con logo y WhatsApp).
+  Variante elegante con curvas (9-nov-2026, a confirmar por Fran): `publicaciones/ejemplo-curvas/` (parte de arriba ROJA con pregunta en blanco, foto entre curvas, pie blanco con logo a color y WhatsApp).
   Estilo "título sobre foto con caja roja": descartado por Fran (25-oct-2026), no usarlo.
 - Logo: preferir SIEMPRE el logo a color, rojo y verde (`marca/versiones/1-principal-color.png`); a Fran no le gusta tanto el rojo y blanco (25-oct-2026).
   Sobre fondo blanco va directo; sobre foto, ponerlo en una zona blanca del diseño o en una pestaña blanca redondeada abajo al centro. `logo-lancarg-sobre-verde.png` (rojo y blanco) solo si no hay otra opción. No inventar otras versiones del logo.
