@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#777;font-family:Inter,sans-serif}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:#fff;margin-bottom:20px}
+.photo{position:absolute;left:0;top:470px;width:1080px;height:740px;object-fit:cover}
+svg.layer{position:absolute;left:0;width:1080px}
+.kick{position:absolute;left:96px;top:104px;display:flex;align-items:center;gap:18px;font-size:26px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E70A0F}
+.kick:before{content:"";width:56px;height:4px;background:#E70A0F}
+h1{position:absolute;left:92px;right:120px;top:160px;font-family:"Inter Display",Inter;font-weight:800;font-size:82px;line-height:1.04;letter-spacing:-.025em;color:#02462D}
+h1 span{color:#E70A0F}
+.sub{position:absolute;left:96px;right:200px;top:360px;font-size:36px;font-weight:500;line-height:1.35;color:#3d4743}
+.sub b{font-weight:700;color:#02462D}
+.d{position:absolute;transform:skewX(-35deg)}
+.tr1{right:-110px;top:-20px;width:200px;height:120px;background:#E70A0F}
+.tr2{right:70px;top:-20px;width:70px;height:120px;border-left:3px solid #E70A0F}
+.logo{position:absolute;left:84px;bottom:30px;width:290px}
+.cta{position:absolute;right:92px;bottom:40px;text-align:right;color:#02462D;font-weight:800;font-size:40px;line-height:1.15}
+.cta small{display:block;font-size:24px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E70A0F;margin-bottom:6px}
+</style></head><body>
+<div class="slide">
+  <img class="photo" src="../../fotos/camion-lancarg-en-muelle-logistico.jpg" style="object-position:50% 100%">
+  <!-- curva superior: blanco que baja suave sobre la foto, con línea roja y verde -->
+  <svg class="layer" style="top:440px" height="140" viewBox="0 0 1080 140" preserveAspectRatio="none">
+    <path d="M0 0 H1080 V40 C780 120 300 120 0 70 Z" fill="#fff"/>
+    <path d="M0 70 C300 120 780 120 1080 40" fill="none" stroke="#E70A0F" stroke-width="5"/>
+    <path d="M0 84 C300 134 780 134 1080 54" fill="none" stroke="#02462D" stroke-width="2"/>
+  </svg>
+  <!-- curva inferior: pie blanco con el logo -->
+  <svg class="layer" style="top:1140px" height="240" viewBox="0 0 1080 240" preserveAspectRatio="none">
+    <path d="M0 240 V60 C320 0 760 0 1080 80 V240 Z" fill="#fff"/>
+    <path d="M0 60 C320 0 760 0 1080 80" fill="none" stroke="#02462D" stroke-width="5"/>
+    <path d="M0 46 C320 -14 760 -14 1080 66" fill="none" stroke="#E70A0F" stroke-width="2"/>
+  </svg>
+  <div class="d tr1"></div><div class="d tr2"></div>
+  <div class="kick">Lancarg responde</div>
+  <h1>¿Qué define el costo<br>de <span>tu envío?</span></h1>
+  <div class="sub">El <b>peso</b>, el <b>tamaño</b> del paquete<br>y el <b>destino</b>.</div>
+  <img class="logo" src="../../marca/versiones/1-principal-color.png">
+  <div class="cta"><small>Cotizá por WhatsApp</small>264 454-3612</div>
+</div>
+</body></html>
