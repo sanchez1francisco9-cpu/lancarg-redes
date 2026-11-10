@@ -21,7 +21,7 @@ body{background:#777;font-family:Inter,sans-serif}
 """
 
 
-def foto(kind, photo, h1, h2=None, box=None, top=None, pos="50% 0%", h1_size=None, h2_size=None, box_size=None, cta=True):
+def foto(kind, photo, h1, h2=None, box=None, top=None, pos="50% 0%", h1_size=None, h2_size=None, box_size=None, cta=True, shade=0.40, extra=""):
     H = 1920 if kind == "story" else 1350
     top = top if top is not None else (300 if kind == "story" else 180)
     h1_size = h1_size or (140 if kind == "story" else 132)
@@ -29,13 +29,14 @@ def foto(kind, photo, h1, h2=None, box=None, top=None, pos="50% 0%", h1_size=Non
     box_size = box_size or (50 if kind == "story" else 50)
     out = [f'<div class="slide {kind}">',
            f'<img class="photo" src="../../fotos/{photo}" style="object-position:{pos}">',
-           f'<div class="shade" style="height:{int(H * .5)}px"></div><div class="shadeb"></div>',
+           f'<div class="shade" style="height:{int(H * .55)}px;background:linear-gradient(180deg,rgba(10,30,50,{shade}),rgba(10,30,50,{shade*.45:.2f}) 60%,transparent)"></div><div class="shadeb"></div>',
            f'<div class="c" style="top:{top}px"><h1 style="font-size:{h1_size}px">{h1}</h1>']
     if h2:
         out.append(f'<h2 style="font-size:{h2_size}px">{h2}</h2>')
     if box:
         out.append(f'<div class="line"></div><div class="box" style="font-size:{box_size}px">{box}</div>')
     out.append('</div>')
+    out.append(extra)
     if cta:
         out.append('<div class="cta"><small>Cotizá por WhatsApp</small>264 454-3612</div>')
     out.append('</div>')
