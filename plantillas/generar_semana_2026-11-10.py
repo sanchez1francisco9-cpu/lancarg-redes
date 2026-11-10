@@ -4,6 +4,7 @@ import os, sys
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from estilo_blanco import page, story, feed
+import estilo_foto as EF
 B = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 R = os.path.join(B, "publicaciones")
 T = {"logo": 230, "kick": 0, "h1": 480}
@@ -23,10 +24,6 @@ def completa(foto, title, size=92, sub=None, fade=(0, 16), tope=None):
 
 
 historias = {
- "2026-11-10-historias": [
-  vert("vertical/camion-scania-lancarg-en-muelle-logistico.jpg", 'Del inicio<br><span class="r">al destino</span>', size=110, fade=(30, 42),
-       sub='Camiones <b>todos los días</b>'),
- ],
  "2026-11-11-historias": [
   completa("deposito-interior-completo.jpg", 'Menos demoras,<br><span class="r">más tranquilidad</span>', size=88, tope=780),
   completa("interior-deposito-bsas-con-mucha-mercaderia-variada.jpg", 'Un socio que<br><span class="r">mueve tu negocio</span>', size=92,
@@ -36,15 +33,12 @@ historias = {
   completa("muestrario-de-cajas-con-el-logo-transportes-lancarg.jpg", 'Más que transporte:<br><span class="r">entregamos confianza</span>', size=78),
  ],
  "2026-11-13-historias": [
-  vert("vertical/camion-en-deposito-bsas.jpg", 'Cobertura regional<br><span class="r">con trato cercano</span>', size=84, fade=(34, 46),
-       sub='Buenos Aires · Córdoba · Rosario<br><b>↔ San Juan y Mendoza</b>'),
   vert("vertical/deposito-buenos-aires-ordenado.jpg", 'El plazo<br><span class="r">no es un detalle</span>', size=100, fade=(34, 46)),
  ],
  "2026-11-14-historias": [
   completa("almacen-deposito-ordenado-san-juan.jpg", 'Cuando el tiempo aprieta,<br><span class="r">la estructura hace<br>la diferencia</span>', size=72, tope=860),
  ],
  "2026-11-15-historias": [
-  vert("vertical/3-camiones-lancarg-bajo-cielo-azul.jpg", 'Llegás más lejos<br><span class="r">con una logística<br>que te acompaña</span>', size=80, fade=(39, 50)),
   vert("vertical/camion-visto-de-atras-a-adelante.jpg", 'Conectando<br><span class="r">lo que importa</span>', size=104, fade=(32, 44)),
  ],
  "2026-11-16-historias": [
@@ -59,10 +53,18 @@ for carpeta, slides in historias.items():
     open(os.path.join(d, "diseno.html"), "w").write(page(slides))
 
 # ---- Post de una imagen (viernes 13): "Crecemos para llegar más lejos" (frase de Fran, 5-nov) ----
-post = feed(photo="carga-de-auto-a-camion-usando-autoelevador.jpg", photo_top=48, photo_h=1302, photo_pos="50% 0%", fade=(30, 44),
-            title='Crecemos para<br><span class="r">llegar más lejos</span>', title_size=92, top={"logo": 70, "kick": 0, "h1": 250})
-d = os.path.join(R, "2026-11-13-post-crecemos"); os.makedirs(d, exist_ok=True)
-open(os.path.join(d, "diseno.html"), "w").write(page([post]))
+# Estilo secundario "foto completa" (Fran, 10-nov): post del viernes y 3 historias con mucho cielo.
+foto_completa = {
+ "2026-11-13-post-crecemos": [EF.foto("feed", "camion-scania-lancarg-bajo-cielo-azul.jpg", "Crecemos", "para llegar más lejos", "Flota propia y moderna")],
+ "2026-11-10-historia-foto": [EF.foto("story", "vertical/camion-scania-lancarg-en-muelle-logistico.jpg", "Del inicio<br>al destino", box="Camiones todos los días", top=260)],
+ "2026-11-13-historia-foto": [EF.foto("story", "vertical/camion-en-deposito-bsas.jpg", "Cobertura<br>regional", "con trato cercano",
+                                      "Buenos Aires · Córdoba · Rosario<br>↔ San Juan y Mendoza", box_size=40, top=230)],
+ "2026-11-15-historia-foto": [EF.foto("story", "vertical/3-camiones-lancarg-bajo-cielo-azul.jpg", "Llegás<br>más lejos", "con una logística<br>que te acompaña",
+                                      "Desde 1957", top=170, h1_size=124, h2_size=54)],
+}
+for carpeta, slides in foto_completa.items():
+    d = os.path.join(R, carpeta); os.makedirs(d, exist_ok=True)
+    open(os.path.join(d, "diseno.html"), "w").write(EF.page(slides))
 
 # ---- Carrusel (lunes 16): "¿Paquete suelto o pallet?" ----
 CUT = "../../fotos/recortes/"
