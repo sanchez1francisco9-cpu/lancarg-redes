@@ -56,7 +56,7 @@ for carpeta, slides in historias.items():
 # Estilo secundario "foto completa" (Fran, 10-nov): post del viernes y 3 historias con mucho cielo.
 foto_completa = {
  "2026-11-13-post-crecemos": [EF.foto("feed", "camion-scania-lancarg-bajo-cielo-azul.jpg", "Crecemos", "para llegar más lejos", "Flota propia y moderna")],
- "2026-11-10-historia-foto": [EF.foto("story", "vertical/camion-scania-lancarg-en-muelle-logistico.jpg", "Del inicio<br>al destino", box="Camiones todos los días", top=260)],
+ "2026-11-10-historia-foto": [EF.foto("story", "vertical/camion-scania-lancarg-en-muelle-logistico.jpg", "De inicio<br>a destino", box="Camiones todos los días", top=260)],
  "2026-11-13-historia-foto": [EF.foto("story", "vertical/camion-en-deposito-bsas.jpg", "Cobertura<br>regional", "con trato cercano",
                                       "Buenos Aires · Córdoba · Rosario<br>↔ San Juan y Mendoza", box_size=40, top=230)],
  "2026-11-15-historia-foto": [EF.foto("story", "vertical/3-camiones-lancarg-bajo-cielo-azul.jpg", "Llegás<br>más lejos", "con una logística<br>que te acompaña",

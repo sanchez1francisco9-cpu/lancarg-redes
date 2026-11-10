@@ -15,7 +15,7 @@ Metricool descarga cada imagen desde su link "raw" de GitHub. Acá va SOLO conte
   foto que se funde con el blanco abajo, diagonales rojas/verdes en esquinas, sin tapar camiones). Estilo por defecto para publicaciones e historias.
   Bases: `publicaciones/ejemplo-foto-y-diseno/` (texto centrado), `ejemplo-foto-y-diseno-2/` (texto a la izquierda, espejado) y `2026-10-28-historia-foto-diseno/` (historia).
   Estilo secundario "foto completa" (pedido de Fran 10-nov-2026, para alternar y no repetir siempre el principal): foto a todo el cuadro con cielo arriba,
-  SIN logo (Fran: no hace falta, así no queda cargado), título blanco grande + frase chica + línea blanca + frase en caja roja, texto solo sobre el cielo (nunca sobre el camión).
+  SIN logo (Fran: no hace falta, así no queda cargado), título blanco grande + frase chica + línea blanca + frase en caja roja, texto solo sobre el cielo (nunca sobre el camión). WhatsApp en caja roja abajo a la derecha (Fran).
   Aprobado por Fran. Generador: `plantillas/estilo_foto.py` (`foto("feed"|"story", ...)`); usarlo en 1 o 2 piezas por semana con fotos de mucho cielo.
   Estilo "curvas" (pregunta arriba + foto entre curvas, tipo Ibarra): descartado por Fran (9-nov-2026), no usarlo.
   Estilo "título sobre foto con caja roja": descartado por Fran (25-oct-2026), no usarlo.
